@@ -1,0 +1,200 @@
+# do ALU_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying /opt/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/guillaume/ArchOrd/Lab01/vhdl/add_sub.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 14:15:12 on Sep 25,2017
+# vcom -reportprogress 300 -93 -work work /home/guillaume/ArchOrd/Lab01/vhdl/add_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity add_sub
+# -- Compiling architecture synth of add_sub
+# ** Warning: /home/guillaume/ArchOrd/Lab01/vhdl/add_sub.vhd(26): (vcom-1275) Arguments of overloaded "xor" operator are not the same length (32 vs. 2).
+# End time: 14:15:12 on Sep 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vcom -93 -work work {/home/guillaume/ArchOrd/Lab01/vhdl/comparator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 14:15:12 on Sep 25,2017
+# vcom -reportprogress 300 -93 -work work /home/guillaume/ArchOrd/Lab01/vhdl/comparator.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity comparator
+# -- Compiling architecture synth of comparator
+# End time: 14:15:12 on Sep 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 14:15:12 on Sep 25,2017
+# vcom -reportprogress 300 -93 -work work /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity logic_unit
+# -- Compiling architecture synth of logic_unit
+# End time: 14:15:12 on Sep 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/guillaume/ArchOrd/Lab01/vhdl/multiplexer.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 14:15:12 on Sep 25,2017
+# vcom -reportprogress 300 -93 -work work /home/guillaume/ArchOrd/Lab01/vhdl/multiplexer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity multiplexer
+# -- Compiling architecture synth of multiplexer
+# ** Error: /home/guillaume/ArchOrd/Lab01/vhdl/multiplexer.vhd(20): (vcom-1339) Case statement choices cover only 4 out of 81 cases.
+# ** Error: /home/guillaume/ArchOrd/Lab01/vhdl/multiplexer.vhd(32): VHDL Compiler exiting
+# End time: 14:15:12 on Sep 25,2017, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /opt/altera_lite/16.0/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro ./ALU_run_msim_rtl_vhdl.do line 11
+# /opt/altera_lite/16.0/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {/home/guillaume/ArchOrd/Lab01/vhdl/multiplexer.vhd}"
+# 
+# stdin: <EOF>
+vsim work.logic_unit
+# vsim work.logic_unit 
+# Start time: 14:15:19 on Sep 25,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.logic_unit(synth)
+add wave -position end  sim:/logic_unit/a
+add wave -position end  sim:/logic_unit/b
+add wave -position end  sim:/logic_unit/op
+add wave -position end  sim:/logic_unit/r
+library ieee;
+# bad option "ieee": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+use ieee.std_logic_1164.all;
+# invalid command name "use"
+
+entity tb_logic_unit is
+# bad option "tb_logic_unit": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+end tb_logic_unit;
+# bad option "tb_logic_unit": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+
+architecture testbench of tb_logic_unit is
+# bad option "testbench": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+    signal a, b, r : std_logic_vector(31 downto 0);
+# wrong # args: should be "signals_subelement_split isvhdl selected_name ?raw_idx?"
+    signal op      : std_logic_vector(1 downto 0);
+# wrong # args: should be "signals_subelement_split isvhdl selected_name ?raw_idx?"
+
+    -- declaration of the logic_unit interface
+# invalid command name "--"
+    component logic_unit is
+# invalid command name "component"
+        port(
+# invalid command name "port("
+            a  : in  std_logic_vector(31 downto 0);
+# ambiguous command name "a": abort actel_edition add addTime add_cmdhelp add_nldataflow_add_menu add_nldataflow_edit_menu add_nldataflow_file_menu add_nldataflow_tools_menu add_nldataflow_trace_menu add_nldataflow_view_menu add_toolbar_button after alias allon altera_edition analysisFileBrowserSave annotate_image announce_title append apply applyToList apply_button_adder applystimulus architecture_image array asrtAdd asrtAddAssertsFromHier asrtAddModuleFromHier asrtChangeHierMode asrtCheckImmediate asrtClearAll asrtClearTriggers asrtConfigDialog asrtContextTracking asrtDoBigCommand asrtDoConfig asrtDoReport asrtDragVerifyItems asrtDropHandler asrtEnableConfigInstance asrtEnableConfigOk asrtEnableInstance asrtEnableLimitEntry asrtEnableOptions asrtEnablePass asrtEnablePathname asrtEnableReportOk asrtEnableTestExtract asrtExclude asrtExcludeWithComment asrtFileBrowserSave asrtGetAllAsrts asrtGetChildrenList asrtGetDefaultConfigSetting asrtGetDisplayRow asrtGetOnlySelAsrts asrtGetSelAsrts asrtGetSelObjs asrtGetTopList asrtHierGetSelections asrtIsSelectionForWave asrtNodeNumElements asrtPopupMenu asrtReportDialog asrtSetAntcdentAction asrtSetBackground asrtSetFailAction asrtSetFailPass asrtSetForeground asrtSetLimitDefault asrtSetOptionDefault asrtSetPassAction asrtSetSelectBackground asrtSetSelectForeground asrtSetSettingsVars asrtSetStartAction asrtSetStringDefault asrtSetTriggers asrtUpdateAll asrtUpdateBrowser asrtValidateConfigInstance asrtValidateConfigOk asrtViewDecl asrtViewModuleSource asrtViewSource assertDefineMenus assertGetData assertResetBrowserData assertion assertion_clock_image assertion_cy_image assertion_message assertion_psl_image assertion_spice_image assertion_verilog_image assertionsShow assertions_destroy atmel_edition autoMap autoRestoreCrashedSchematic auto_execok auto_import auto_load auto_load_index auto_mkindex auto_mkindex_old auto_qualify auto_reset
+            b  : in  std_logic_vector(31 downto 0);
+# ambiguous command name "b": batch_mode bd bedit bell binary bind bindtags blocks_image body body_image bookmark bp break bus_cycle_image button
+            op : in  std_logic_vector(1 downto 0);
+# ambiguous command name "op": open openFolder opt_image option
+            r  : out std_logic_vector(31 downto 0)
+# ambiguous command name "r": radiobutton radix raise random random_image range rankfile_image read readEvcdFile readers readmapfile really_quit really_restart regexp region_image regsub rename resetGlobalEvcd resetTime resolveBusMember restart restartCmd restartDone restartError restartParse restore results_image resultsdir_image resultsdirne_image resultsfile_image resume return right rincr rmdb rmdb_image run runIntHandler runStatus
+        );
+# invalid command name ")"
+    end component;
+# bad option "component": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+
+begin
+# invalid command name "begin"
+
+    -- logic unit instance
+# invalid command name "--"
+    logic_unit_0 : logic_unit port map(
+# invalid command name "logic_unit_0"
+            a  => a,
+# ambiguous command name "a": abort actel_edition add addTime add_cmdhelp add_nldataflow_add_menu add_nldataflow_edit_menu add_nldataflow_file_menu add_nldataflow_tools_menu add_nldataflow_trace_menu add_nldataflow_view_menu add_toolbar_button after alias allon altera_edition analysisFileBrowserSave annotate_image announce_title append apply applyToList apply_button_adder applystimulus architecture_image array asrtAdd asrtAddAssertsFromHier asrtAddModuleFromHier asrtChangeHierMode asrtCheckImmediate asrtClearAll asrtClearTriggers asrtConfigDialog asrtContextTracking asrtDoBigCommand asrtDoConfig asrtDoReport asrtDragVerifyItems asrtDropHandler asrtEnableConfigInstance asrtEnableConfigOk asrtEnableInstance asrtEnableLimitEntry asrtEnableOptions asrtEnablePass asrtEnablePathname asrtEnableReportOk asrtEnableTestExtract asrtExclude asrtExcludeWithComment asrtFileBrowserSave asrtGetAllAsrts asrtGetChildrenList asrtGetDefaultConfigSetting asrtGetDisplayRow asrtGetOnlySelAsrts asrtGetSelAsrts asrtGetSelObjs asrtGetTopList asrtHierGetSelections asrtIsSelectionForWave asrtNodeNumElements asrtPopupMenu asrtReportDialog asrtSetAntcdentAction asrtSetBackground asrtSetFailAction asrtSetFailPass asrtSetForeground asrtSetLimitDefault asrtSetOptionDefault asrtSetPassAction asrtSetSelectBackground asrtSetSelectForeground asrtSetSettingsVars asrtSetStartAction asrtSetStringDefault asrtSetTriggers asrtUpdateAll asrtUpdateBrowser asrtValidateConfigInstance asrtValidateConfigOk asrtViewDecl asrtViewModuleSource asrtViewSource assertDefineMenus assertGetData assertResetBrowserData assertion assertion_clock_image assertion_cy_image assertion_message assertion_psl_image assertion_spice_image assertion_verilog_image assertionsShow assertions_destroy atmel_edition autoMap autoRestoreCrashedSchematic auto_execok auto_import auto_load auto_load_index auto_mkindex auto_mkindex_old auto_qualify auto_reset
+            b  => b,
+# ambiguous command name "b": batch_mode bd bedit bell binary bind bindtags blocks_image body body_image bookmark bp break bus_cycle_image button
+            op => op,
+# ambiguous command name "op": open openFolder opt_image option
+            r  => r
+# ambiguous command name "r": radiobutton radix raise random random_image range rankfile_image read readEvcdFile readers readmapfile really_quit really_restart regexp region_image regsub rename resetGlobalEvcd resetTime resolveBusMember restart restartCmd restartDone restartError restartParse restore results_image resultsdir_image resultsdirne_image resultsfile_image resume return right rincr rmdb rmdb_image run runIntHandler runStatus
+        );
+# invalid command name ")"
+
+    -- process for verification of the logic unit
+# invalid command name "--"
+    check : process
+# Unsupported in PE cmd: check
+    begin
+# invalid command name "begin"
+        -- This is the 4 possible 2 bits combinaisons between A and B
+# invalid command name "--"
+        a <= (31 downto 4 => '0') & "1100";
+# ambiguous command name "a": abort actel_edition add addTime add_cmdhelp add_nldataflow_add_menu add_nldataflow_edit_menu add_nldataflow_file_menu add_nldataflow_tools_menu add_nldataflow_trace_menu add_nldataflow_view_menu add_toolbar_button after alias allon altera_edition analysisFileBrowserSave annotate_image announce_title append apply applyToList apply_button_adder applystimulus architecture_image array asrtAdd asrtAddAssertsFromHier asrtAddModuleFromHier asrtChangeHierMode asrtCheckImmediate asrtClearAll asrtClearTriggers asrtConfigDialog asrtContextTracking asrtDoBigCommand asrtDoConfig asrtDoReport asrtDragVerifyItems asrtDropHandler asrtEnableConfigInstance asrtEnableConfigOk asrtEnableInstance asrtEnableLimitEntry asrtEnableOptions asrtEnablePass asrtEnablePathname asrtEnableReportOk asrtEnableTestExtract asrtExclude asrtExcludeWithComment asrtFileBrowserSave asrtGetAllAsrts asrtGetChildrenList asrtGetDefaultConfigSetting asrtGetDisplayRow asrtGetOnlySelAsrts asrtGetSelAsrts asrtGetSelObjs asrtGetTopList asrtHierGetSelections asrtIsSelectionForWave asrtNodeNumElements asrtPopupMenu asrtReportDialog asrtSetAntcdentAction asrtSetBackground asrtSetFailAction asrtSetFailPass asrtSetForeground asrtSetLimitDefault asrtSetOptionDefault asrtSetPassAction asrtSetSelectBackground asrtSetSelectForeground asrtSetSettingsVars asrtSetStartAction asrtSetStringDefault asrtSetTriggers asrtUpdateAll asrtUpdateBrowser asrtValidateConfigInstance asrtValidateConfigOk asrtViewDecl asrtViewModuleSource asrtViewSource assertDefineMenus assertGetData assertResetBrowserData assertion assertion_clock_image assertion_cy_image assertion_message assertion_psl_image assertion_spice_image assertion_verilog_image assertionsShow assertions_destroy atmel_edition autoMap autoRestoreCrashedSchematic auto_execok auto_import auto_load auto_load_index auto_mkindex auto_mkindex_old auto_qualify auto_reset
+        b <= (31 downto 4 => '0') & "1010";
+# ambiguous command name "b": batch_mode bd bedit bell binary bind bindtags blocks_image body body_image bookmark bp break bus_cycle_image button
+
+        -- A NOR B
+# invalid command name "--"
+		  op <= "00"
+# ambiguous command name "op": open openFolder opt_image option
+        -- assign the correct value to op to test A NOR B
+# invalid command name "--"
+        wait for 20 ns;                 -- wait for circuit to settle
+# invalid command name "wait"
+        -- insert an ASSERT statement here
+# invalid command name "--"
+
+        -- A AND B
+# invalid command name "--"
+		  op <= "01"
+# ambiguous command name "op": open openFolder opt_image option
+        -- assign the correct value to op to test A AND B
+# invalid command name "--"
+        wait for 20 ns;                 -- wait for circuit to settle
+# invalid command name "wait"
+        -- insert an ASSERT statement here
+# invalid command name "--"
+
+        -- A OR B
+# invalid command name "--"
+		  op <= "10"
+# ambiguous command name "op": open openFolder opt_image option
+        -- assign the correct value to op to test A OR B
+# invalid command name "--"
+        wait for 20 ns;                 -- wait for circuit to settle
+# invalid command name "wait"
+        -- insert an ASSERT statement here
+# invalid command name "--"
+
+        -- A XOR B
+# invalid command name "--"
+		  op <= "11	"
+# ambiguous command name "op": open openFolder opt_image option
+        -- assign the correct value to op to test A XOR B
+# invalid command name "--"
+        wait for 20 ns;                 -- wait for circuit to settle
+# invalid command name "wait"
+        -- insert an ASSERT statement here
+# invalid command name "--"
+
+        wait;                           -- wait forever
+# invalid command name "wait"
+    end process;
+# bad option "process": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+
+end testbench;
+# bad option "testbench": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+# Load canceled
+# End time: 14:17:33 on Sep 25,2017, Elapsed time: 0:02:14
+# Errors: 54, Warnings: 0
