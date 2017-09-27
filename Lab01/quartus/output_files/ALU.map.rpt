@@ -1,6 +1,6 @@
 Analysis & Synthesis report for ALU
-Wed Sep 27 08:42:28 2017
-Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Wed Sep 27 10:50:08 2017
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
 ---------------------
@@ -25,18 +25,18 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2017  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel MegaCore Function License Agreement, or other 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
 applicable license agreement, including, without limitation, 
 that your use is for the sole purpose of programming logic 
-devices manufactured by Intel and sold by Intel or its 
+devices manufactured by Altera and sold by Altera or its 
 authorized distributors.  Please refer to the applicable 
 agreement for further details.
 
@@ -45,8 +45,8 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Sep 27 08:42:27 2017       ;
-; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Wed Sep 27 10:50:08 2017       ;
+; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; ALU                                         ;
 ; Top-level Entity Name              ; ALU                                         ;
 ; Family                             ; Cyclone IV E                                ;
@@ -76,7 +76,7 @@ agreement for further details.
 ; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
 ; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
 ; Preserve fewer node names                                                  ; On                 ; On                 ;
-; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
 ; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
 ; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                   ; Auto               ; Auto               ;
@@ -145,37 +145,33 @@ agreement for further details.
 ; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
 ; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
 ; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                               ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                     ; Library ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
-; ALU.bdf                          ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/quartus/ALU.bdf      ;         ;
-; ../vhdl/add_sub.vhd              ; yes             ; User VHDL File                     ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd     ;         ;
-; ../vhdl/comparator.vhd           ; yes             ; User VHDL File                     ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/comparator.vhd  ;         ;
-; ../vhdl/logic_unit.vhd           ; yes             ; User VHDL File                     ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd  ;         ;
-; ../vhdl/multiplexer.vhd          ; yes             ; User VHDL File                     ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/multiplexer.vhd ;         ;
-; ../vhdl/shift_unit.vhd           ; yes             ; User VHDL File                     ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/shift_unit.vhd  ;         ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                       ; Library ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------+---------+
+; ALU.bdf                          ; yes             ; User Block Diagram/Schematic File  ; /home/guillaume/ArchOrd/Lab01/quartus/ALU.bdf      ;         ;
+; ../vhdl/add_sub.vhd              ; yes             ; User VHDL File                     ; /home/guillaume/ArchOrd/Lab01/vhdl/add_sub.vhd     ;         ;
+; ../vhdl/comparator.vhd           ; yes             ; User VHDL File                     ; /home/guillaume/ArchOrd/Lab01/vhdl/comparator.vhd  ;         ;
+; ../vhdl/logic_unit.vhd           ; yes             ; User VHDL File                     ; /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd  ;         ;
+; ../vhdl/multiplexer.vhd          ; yes             ; User VHDL File                     ; /home/guillaume/ArchOrd/Lab01/vhdl/multiplexer.vhd ;         ;
+; ../vhdl/shift_unit.vhd           ; yes             ; User VHDL File                     ; /home/guillaume/ArchOrd/Lab01/vhdl/shift_unit.vhd  ;         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -210,15 +206,15 @@ agreement for further details.
 +---------------------------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                     ;
-+--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------+--------------+
-; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Entity Name ; Library Name ;
-+--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------+--------------+
-; |ALU                           ; 164 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 102  ; 0            ; |ALU                           ; ALU         ; work         ;
-;    |add_sub:add_sub_0|         ; 96 (96)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|add_sub:add_sub_0         ; add_sub     ; work         ;
-;    |multiplexer:multiplexer_0| ; 68 (68)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|multiplexer:multiplexer_0 ; multiplexer ; work         ;
-+--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------+--------------+
+; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Entity Name ; Library Name ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------+--------------+
+; |ALU                           ; 164 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 102  ; 0            ; |ALU                           ; ALU         ; work         ;
+;    |add_sub:add_sub_0|         ; 96 (96)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|add_sub:add_sub_0         ; add_sub     ; work         ;
+;    |multiplexer:multiplexer_0| ; 68 (68)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|multiplexer:multiplexer_0 ; multiplexer ; work         ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -228,37 +224,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Logic Cell Name                                        ;    ;
 +--------------------------------------------------------+----+
 ; add_sub:add_sub_0|carry                                ;    ;
-; add_sub:add_sub_0|temp[30]~31                          ;    ;
-; add_sub:add_sub_0|temp[29]~32                          ;    ;
-; add_sub:add_sub_0|temp[28]~33                          ;    ;
-; add_sub:add_sub_0|temp[27]~34                          ;    ;
-; add_sub:add_sub_0|temp[26]~35                          ;    ;
-; add_sub:add_sub_0|temp[25]~36                          ;    ;
-; add_sub:add_sub_0|temp[24]~37                          ;    ;
-; add_sub:add_sub_0|temp[23]~38                          ;    ;
-; add_sub:add_sub_0|temp[22]~39                          ;    ;
-; add_sub:add_sub_0|temp[21]~40                          ;    ;
-; add_sub:add_sub_0|temp[20]~41                          ;    ;
-; add_sub:add_sub_0|temp[19]~42                          ;    ;
-; add_sub:add_sub_0|temp[18]~43                          ;    ;
-; add_sub:add_sub_0|temp[17]~44                          ;    ;
-; add_sub:add_sub_0|temp[16]~45                          ;    ;
-; add_sub:add_sub_0|temp[15]~46                          ;    ;
-; add_sub:add_sub_0|temp[14]~47                          ;    ;
-; add_sub:add_sub_0|temp[13]~48                          ;    ;
-; add_sub:add_sub_0|temp[12]~49                          ;    ;
-; add_sub:add_sub_0|temp[11]~50                          ;    ;
-; add_sub:add_sub_0|temp[10]~51                          ;    ;
-; add_sub:add_sub_0|temp[9]~52                           ;    ;
-; add_sub:add_sub_0|temp[8]~53                           ;    ;
-; add_sub:add_sub_0|temp[7]~54                           ;    ;
-; add_sub:add_sub_0|temp[6]~55                           ;    ;
-; add_sub:add_sub_0|temp[5]~56                           ;    ;
-; add_sub:add_sub_0|temp[4]~57                           ;    ;
-; add_sub:add_sub_0|temp[3]~58                           ;    ;
-; add_sub:add_sub_0|temp[2]~59                           ;    ;
-; add_sub:add_sub_0|temp[1]~60                           ;    ;
-; add_sub:add_sub_0|temp[0]~61                           ;    ;
+; add_sub:add_sub_0|temp~31                              ;    ;
+; add_sub:add_sub_0|temp~32                              ;    ;
+; add_sub:add_sub_0|temp~33                              ;    ;
+; add_sub:add_sub_0|temp~34                              ;    ;
+; add_sub:add_sub_0|temp~35                              ;    ;
+; add_sub:add_sub_0|temp~36                              ;    ;
+; add_sub:add_sub_0|temp~37                              ;    ;
+; add_sub:add_sub_0|temp~38                              ;    ;
+; add_sub:add_sub_0|temp~39                              ;    ;
+; add_sub:add_sub_0|temp~40                              ;    ;
+; add_sub:add_sub_0|temp~41                              ;    ;
+; add_sub:add_sub_0|temp~42                              ;    ;
+; add_sub:add_sub_0|temp~43                              ;    ;
+; add_sub:add_sub_0|temp~44                              ;    ;
+; add_sub:add_sub_0|temp~45                              ;    ;
+; add_sub:add_sub_0|temp~46                              ;    ;
+; add_sub:add_sub_0|temp~47                              ;    ;
+; add_sub:add_sub_0|temp~48                              ;    ;
+; add_sub:add_sub_0|temp~49                              ;    ;
+; add_sub:add_sub_0|temp~50                              ;    ;
+; add_sub:add_sub_0|temp~51                              ;    ;
+; add_sub:add_sub_0|temp~52                              ;    ;
+; add_sub:add_sub_0|temp~53                              ;    ;
+; add_sub:add_sub_0|temp~54                              ;    ;
+; add_sub:add_sub_0|temp~55                              ;    ;
+; add_sub:add_sub_0|temp~56                              ;    ;
+; add_sub:add_sub_0|temp~57                              ;    ;
+; add_sub:add_sub_0|temp~58                              ;    ;
+; add_sub:add_sub_0|temp~59                              ;    ;
+; add_sub:add_sub_0|temp~60                              ;    ;
+; add_sub:add_sub_0|temp~61                              ;    ;
 ; Number of logic cells representing combinational loops ; 32 ;
 +--------------------------------------------------------+----+
 Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -279,14 +275,14 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |ALU|multiplexer:multiplexer_0|Mux15 ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ALU|logic_unit:logic_unit_0|r[1]    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |ALU|multiplexer:multiplexer_0|Mux1 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ALU|logic_unit:logic_unit_0|r[0]   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -313,7 +309,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -322,142 +318,101 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Sep 27 08:41:58 2017
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Wed Sep 27 10:49:55 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file alu.bdf
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file ALU.bdf
     Info (12023): Found entity 1: ALU
-Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab01/vhdl/add_sub.vhd
-    Info (12022): Found design unit 1: add_sub-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 17
-    Info (12023): Found entity 1: add_sub File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab01/vhdl/comparator.vhd
-    Info (12022): Found design unit 1: comparator-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/comparator.vhd Line: 16
-    Info (12023): Found entity 1: comparator File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/comparator.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab01/vhdl/logic_unit.vhd
-    Info (12022): Found design unit 1: logic_unit-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 13
-    Info (12023): Found entity 1: logic_unit File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab01/vhdl/multiplexer.vhd
-    Info (12022): Found design unit 1: multiplexer-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/multiplexer.vhd Line: 15
-    Info (12023): Found entity 1: multiplexer File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/multiplexer.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab01/vhdl/shift_unit.vhd
-    Info (12022): Found design unit 1: shift_unit-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/shift_unit.vhd Line: 14
-    Info (12023): Found entity 1: shift_unit File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/shift_unit.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab01/vhdl/add_sub.vhd
+    Info (12022): Found design unit 1: add_sub-synth File: /home/guillaume/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 17
+    Info (12023): Found entity 1: add_sub File: /home/guillaume/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab01/vhdl/comparator.vhd
+    Info (12022): Found design unit 1: comparator-synth File: /home/guillaume/ArchOrd/Lab01/vhdl/comparator.vhd Line: 16
+    Info (12023): Found entity 1: comparator File: /home/guillaume/ArchOrd/Lab01/vhdl/comparator.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd
+    Info (12022): Found design unit 1: logic_unit-synth File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 13
+    Info (12023): Found entity 1: logic_unit File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab01/vhdl/multiplexer.vhd
+    Info (12022): Found design unit 1: multiplexer-synth File: /home/guillaume/ArchOrd/Lab01/vhdl/multiplexer.vhd Line: 15
+    Info (12023): Found entity 1: multiplexer File: /home/guillaume/ArchOrd/Lab01/vhdl/multiplexer.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab01/vhdl/shift_unit.vhd
+    Info (12022): Found design unit 1: shift_unit-synth File: /home/guillaume/ArchOrd/Lab01/vhdl/shift_unit.vhd Line: 14
+    Info (12023): Found entity 1: shift_unit File: /home/guillaume/ArchOrd/Lab01/vhdl/shift_unit.vhd Line: 5
 Info (12127): Elaborating entity "ALU" for the top level hierarchy
 Info (12128): Elaborating entity "multiplexer" for hierarchy "multiplexer:multiplexer_0"
 Info (12128): Elaborating entity "add_sub" for hierarchy "add_sub:add_sub_0"
-Warning (10492): VHDL Process Statement warning at add_sub.vhd(27): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 27
-Warning (10492): VHDL Process Statement warning at add_sub.vhd(28): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 28
-Warning (10492): VHDL Process Statement warning at add_sub.vhd(29): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 29
-Warning (10492): VHDL Process Statement warning at add_sub.vhd(33): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 33
-Warning (10492): VHDL Process Statement warning at add_sub.vhd(34): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 34
-Warning (10492): VHDL Process Statement warning at add_sub.vhd(37): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 37
-Warning (10492): VHDL Process Statement warning at add_sub.vhd(42): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 42
-Warning (10631): VHDL Process Statement warning at add_sub.vhd(23): inferring latch(es) for signal or variable "temp", which holds its previous value in one or more paths through the process File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Warning (10631): VHDL Process Statement warning at add_sub.vhd(23): inferring latch(es) for signal or variable "carry", which holds its previous value in one or more paths through the process File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "carry" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[0]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[1]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[2]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[3]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[4]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[5]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[6]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[7]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[8]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[9]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[10]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[11]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[12]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[13]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[14]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[15]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[16]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[17]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[18]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[19]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[20]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[21]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[22]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[23]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[24]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[25]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[26]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[27]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[28]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[29]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[30]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "temp[31]" at add_sub.vhd(23) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
+Warning (10631): VHDL Process Statement warning at add_sub.vhd(23): inferring latch(es) for signal or variable "carry", which holds its previous value in one or more paths through the process File: /home/guillaume/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
+Info (10041): Inferred latch for "carry" at add_sub.vhd(23) File: /home/guillaume/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
 Info (12128): Elaborating entity "comparator" for hierarchy "comparator:comparator_0"
 Info (12128): Elaborating entity "logic_unit" for hierarchy "logic_unit:logic_unit_0"
-Warning (10631): VHDL Process Statement warning at logic_unit.vhd(16): inferring latch(es) for signal or variable "r", which holds its previous value in one or more paths through the process File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[0]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[1]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[2]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[3]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[4]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[5]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[6]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[7]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[8]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[9]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[10]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[11]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[12]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[13]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[14]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[15]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[16]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[17]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[18]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[19]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[20]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[21]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[22]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[23]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[24]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[25]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[26]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[27]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[28]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[29]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[30]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[31]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (10631): VHDL Process Statement warning at logic_unit.vhd(16): inferring latch(es) for signal or variable "r", which holds its previous value in one or more paths through the process File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[0]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[1]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[2]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[3]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[4]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[5]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[6]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[7]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[8]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[9]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[10]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[11]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[12]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[13]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[14]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[15]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[16]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[17]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[18]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[19]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[20]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[21]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[22]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[23]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[24]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[25]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[26]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[27]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[28]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[29]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[30]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[31]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
 Info (12128): Elaborating entity "shift_unit" for hierarchy "shift_unit:shift_unit_0"
-Warning (10541): VHDL Signal Declaration warning at shift_unit.vhd(10): used implicit default value for signal "r" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/shift_unit.vhd Line: 10
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[31]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[30]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[29]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[28]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[27]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[26]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[25]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[24]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[23]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[22]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[21]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[20]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[19]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[18]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[17]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[16]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[15]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[14]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[13]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[12]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[11]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[10]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[9]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[8]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[7]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[6]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[5]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[4]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[3]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[2]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[1]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
-Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[0]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (10541): VHDL Signal Declaration warning at shift_unit.vhd(10): used implicit default value for signal "r" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/guillaume/ArchOrd/Lab01/vhdl/shift_unit.vhd Line: 10
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[31]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[30]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[29]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[28]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[27]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[26]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[25]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[24]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[23]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[22]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[21]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[20]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[19]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[18]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[17]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[16]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[15]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[14]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[13]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[12]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[11]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[10]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[9]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[8]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[7]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[6]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[5]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[4]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[3]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[2]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[1]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[0]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -465,10 +420,10 @@ Info (21057): Implemented 266 device resources after synthesis - the final resou
     Info (21058): Implemented 70 input pins
     Info (21059): Implemented 32 output pins
     Info (21061): Implemented 164 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 44 warnings
-    Info: Peak virtual memory: 674 megabytes
-    Info: Processing ended: Wed Sep 27 08:42:28 2017
-    Info: Elapsed time: 00:00:30
-    Info: Total CPU time (on all processors): 00:00:29
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 1246 megabytes
+    Info: Processing ended: Wed Sep 27 10:50:08 2017
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:30
 
 

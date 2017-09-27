@@ -20,10 +20,11 @@ signal temp : std_logic_vector(31 downto 0);
 
 begin
 
-	process(a, b, sub_mode)
+	process(a, b, sub_mode, temp)
 	begin
+		temp <= (others => '0');
 		if(sub_mode = '1') then
-			temp <= b xor (sub_mode & (30 => '0'));
+			temp <= b xor (sub_mode & "0000000000000000000000000000000");
 			temp <= temp + a + 1;
 			carry <= temp(31);
 			r <= temp;

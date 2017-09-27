@@ -75,34 +75,16 @@ begin
                             when "001" => expected := std_logic_vector(signed(a) - signed(b));
                             -- comparator
                             when "011" =>
----------------------------------------MODIFY HERE-------------------------------------------------------------
-									case op(2 downto 0) is
-                                    when "001"   => expected := (not a_31 and b_31) or (not diff_31 and (not a_31 xor b_31));
-                                    when "010"   => expected := (not b_31 and a_31) or (diff_31 and (not a_31 xor b_31));
-                                    when "011"   => expected := if(diff_31 = '0') then
-																						r <= '0';
-																					 else
-																						r <= '1';
-																					 end if;
-												when "100"   => expected := if(diff_31 = '0') then
-																						r <= '1';
-																					 else
-																						r <= '0';
-																					 end if;
-												when "101"	 => expected :=
-																					 if(carry = '1') then
-																						r <= '1';
-																					 else
-																						r <= '0';
-																					 end if;
-												when "110"	 => expected :=
-																					 if(carry = '1') then
-																						r <= '0';
-																					 else
-																						r <= '1';
-																					 end if;
-																					 
-																					 
+---------------------------------------MODIFY HERE------------------------------------------------------------
+                                case op(2 downto 0) is
+                                    when "001"  => expected := signed(a) >= signed(b);
+                                    when "010"  => expected := signed(a) < signed(b);
+                                    when "011"  => expected := a /= b;
+                                    when "100"  => expected := a = b;
+                                    when "101"  => expected := unsigned(a) >= unsigned(b);
+                                    when "110"  => expected := unsigned(a) < unsigned(b);
+                                    when others => expected := s;
+                                end case;	 
 ---------------------------------------END MODIFY--------------------------------------------------------------
                             -- "010" is not valid -> ignore
                             -- logical unit
