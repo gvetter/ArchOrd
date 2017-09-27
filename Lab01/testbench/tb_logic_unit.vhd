@@ -36,25 +36,29 @@ begin
         b <= (31 downto 4 => '0') & "1010";
 
         -- A NOR B
-		  op <= "00"
+		  op <= "00";
         -- assign the correct value to op to test A NOR B
         wait for 20 ns;                 -- wait for circuit to settle
         -- insert an ASSERT statement here
+	assert r = (a nor b) -- Should be true
+	report "Incorrect NOR Behavior" -- Message to display
+	severity warning; -- Message is a warning
+
 
         -- A AND B
-		  op <= "01"
+		  op <= "01";
         -- assign the correct value to op to test A AND B
         wait for 20 ns;                 -- wait for circuit to settle
         -- insert an ASSERT statement here
 
         -- A OR B
-		  op <= "10"
+		  op <= "10";
         -- assign the correct value to op to test A OR B
         wait for 20 ns;                 -- wait for circuit to settle
         -- insert an ASSERT statement here
 
         -- A XOR B
-		  op <= "11	"
+		  op <= "11";
         -- assign the correct value to op to test A XOR B
         wait for 20 ns;                 -- wait for circuit to settle
         -- insert an ASSERT statement here

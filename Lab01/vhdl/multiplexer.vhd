@@ -26,6 +26,8 @@ begin
 
 		when "11" => o <= i3;
 		
+		when others => o <= i0 ; -- tout les cas n'étaient pas couvert
+		
 	end case;
 
 end process;

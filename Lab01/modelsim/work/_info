@@ -1,3 +1,330 @@
 m255
+K4
+z0
 13
 cModel Technology
+Eadd_sub
+Z0 w1506425506
+Z1 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z3 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z6 dC:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/modelsim
+Z7 8C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd
+Z8 FC:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd
+l0
+L6
+Vk[>>43lE1lM]8Ba6m0zf]0
+!s100 E3LNL28]k_lVW[45B2oe<3
+Z9 OV;C;10.5b;63
+32
+Z10 !s110 1506499731
+!i10b 1
+Z11 !s108 1506499731.000000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd|
+Z13 !s107 C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/add_sub.vhd|
+!i113 1
+Z14 o-work work -2002 -explicit
+Z15 tExplicit 1 CvgOpt 0
+Asynth
+R1
+R2
+R3
+R4
+R5
+DEx4 work 7 add_sub 0 22 k[>>43lE1lM]8Ba6m0zf]0
+l21
+L17
+VE3gDbm;`fzVzie=OdX89N3
+!s100 CzO1;IC4jGfPl>m@KBiER3
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R14
+R15
+Ealu
+R0
+R4
+R5
+R6
+Z16 8C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/ALU.vhd
+Z17 FC:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/ALU.vhd
+l0
+L24
+VLIV0?b]kCZ40<iPbTC=4:2
+!s100 O`l`Xc5c_V9`dzon<W_fQ2
+R9
+32
+R10
+!i10b 1
+R11
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/ALU.vhd|
+Z19 !s107 C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/ALU.vhd|
+!i113 1
+R14
+R15
+Abdf_type
+R4
+R5
+Z20 DEx4 work 3 alu 0 22 LIV0?b]kCZ40<iPbTC=4:2
+l91
+L34
+Vn7Jhlm<g3=Igo4gAY0?Z=3
+!s100 ao^@A8=RSg[FW?jY:[EXI0
+R9
+32
+R10
+!i10b 1
+R11
+R18
+R19
+!i113 1
+R14
+R15
+Ecomparator
+R0
+R4
+R5
+R6
+Z21 8C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/comparator.vhd
+Z22 FC:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/comparator.vhd
+l0
+L4
+V3WXakLjKGIMC9fTC_zAJG3
+!s100 XTWoF>RX1>LcmLLBBo;N:0
+R9
+32
+R10
+!i10b 1
+R11
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/comparator.vhd|
+Z24 !s107 C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/comparator.vhd|
+!i113 1
+R14
+R15
+Asynth
+R4
+R5
+DEx4 work 10 comparator 0 22 3WXakLjKGIMC9fTC_zAJG3
+l17
+L16
+Vj3XdLI_X7nJoLN3EcUUUD2
+!s100 @olghneck4;h]Hc^YfF>d1
+R9
+32
+R10
+!i10b 1
+R11
+R23
+R24
+!i113 1
+R14
+R15
+Elogic_unit
+R0
+R4
+R5
+R6
+Z25 8C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd
+Z26 FC:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd
+l0
+L4
+VfUEL39DQfcR_XLk:Hoe<f3
+!s100 UJioXKUg8XUULGTSe2WE20
+R9
+32
+R10
+!i10b 1
+R11
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd|
+Z28 !s107 C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/logic_unit.vhd|
+!i113 1
+R14
+R15
+Asynth
+R4
+R5
+DEx4 work 10 logic_unit 0 22 fUEL39DQfcR_XLk:Hoe<f3
+l14
+L13
+V8JjI;hAE8ZRgzLjn_B:UD3
+!s100 =U`18jb>XgRWR]@KNKb6R1
+R9
+32
+R10
+!i10b 1
+R11
+R27
+R28
+!i113 1
+R14
+R15
+Emultiplexer
+Z29 w1506496695
+R4
+R5
+R6
+Z30 8C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/multiplexer.vhd
+Z31 FC:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/multiplexer.vhd
+l0
+L4
+V4iH6`nZgBAHVia??bJk>G2
+!s100 UDM^5ga=kb9Z[=K^]bghV0
+R9
+32
+Z32 !s110 1506499732
+!i10b 1
+Z33 !s108 1506499732.000000
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/multiplexer.vhd|
+Z35 !s107 C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/multiplexer.vhd|
+!i113 1
+R14
+R15
+Asynth
+R4
+R5
+DEx4 work 11 multiplexer 0 22 4iH6`nZgBAHVia??bJk>G2
+l16
+L15
+V?:Igm9g2kn]`6:UTgY6[C0
+!s100 oj8@8W`_CEP8S_<H=DfEO3
+R9
+32
+R32
+!i10b 1
+R33
+R34
+R35
+!i113 1
+R14
+R15
+Eshift_unit
+R0
+R3
+R4
+R5
+R6
+Z36 8C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/shift_unit.vhd
+Z37 FC:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/shift_unit.vhd
+l0
+L5
+VoYz=ZP:Rg2U9Eb=ZGo>940
+!s100 C4@E7NN0:UB89P^MW405S0
+R9
+32
+R32
+!i10b 1
+R33
+Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/shift_unit.vhd|
+Z39 !s107 C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/vhdl/shift_unit.vhd|
+!i113 1
+R14
+R15
+Asynth
+R3
+R4
+R5
+DEx4 work 10 shift_unit 0 22 oYz=ZP:Rg2U9Eb=ZGo>940
+l15
+L14
+V@nFV=K3:Z_d6IjB;3@zU;3
+!s100 [321mfnCdb31EL<HVmGPL3
+R9
+32
+R32
+!i10b 1
+R33
+R38
+R39
+!i113 1
+R14
+R15
+Etb_alu
+R0
+R3
+R4
+R5
+R6
+Z40 8C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/testbench/tb_ALU.vhd
+Z41 FC:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/testbench/tb_ALU.vhd
+l0
+L5
+VT@^:2]h1P<eK[1@Zc>8Nz2
+!s100 h4gR^9UUSFUJBW2hl@TTO2
+R9
+32
+Z42 !s110 1506499733
+!i10b 1
+Z43 !s108 1506499733.000000
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-cover|s|-stats=none|C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/testbench/tb_ALU.vhd|
+Z45 !s107 C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/testbench/tb_ALU.vhd|
+!i113 1
+Z46 !s102 -cover s
+Z47 o-work work -2002 -explicit -cover s
+R15
+Abench
+R20
+R3
+R4
+R5
+Z48 DEx4 work 6 tb_alu 0 22 T@^:2]h1P<eK[1@Zc>8Nz2
+l12
+L8
+Z49 V9T;G7lh1fXemjEJCZ5C=E0
+Z50 !s100 a_YPDh`0bQGE]Sh_f[D]j0
+R9
+32
+R42
+!i10b 1
+R43
+R44
+R45
+!i113 1
+R46
+R47
+R15
+Etb_logic_unit
+Z51 w1506497996
+R4
+R5
+R6
+Z52 8C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/testbench/tb_logic_unit.vhd
+Z53 FC:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/testbench/tb_logic_unit.vhd
+l0
+L4
+V56]=9U8E_0^hnOWE8_kak0
+!s100 I0S6Z^F^OTJKf4O?Ic>222
+R9
+32
+R32
+!i10b 1
+R33
+Z54 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/testbench/tb_logic_unit.vhd|
+Z55 !s107 C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab01/testbench/tb_logic_unit.vhd|
+!i113 1
+R14
+R15
+Atestbench
+R4
+R5
+DEx4 work 13 tb_logic_unit 0 22 56]=9U8E_0^hnOWE8_kak0
+l21
+L7
+Vf3DC8?b2Xh45=H8bCWbX;1
+!s100 e_Bn]>_izgKz:8<2z5eWV3
+R9
+32
+R32
+!i10b 1
+R33
+R54
+R55
+!i113 1
+R14
+R15
