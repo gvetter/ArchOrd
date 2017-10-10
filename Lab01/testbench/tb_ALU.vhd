@@ -1,6 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity tb_ALU is
 end;
@@ -77,14 +78,15 @@ begin
                             when "011" =>
 ---------------------------------------MODIFY HERE------------------------------------------------------------
                                 case op(2 downto 0) is
-                                    when "001"  => expected := signed(a) >= signed(b);
-                                    when "010"  => expected := signed(a) < signed(b);
-                                    when "011"  => expected := a /= b;
-                                    when "100"  => expected := a = b;
-                                    when "101"  => expected := unsigned(a) >= unsigned(b);
-                                    when "110"  => expected := unsigned(a) < unsigned(b);
-                                    when others => expected := s;
+                                    when "001"  => test := signed(a) >= signed(b);
+                                    when "010"  => test := signed(a) < signed(b);
+                                    when "011"  => test := a /= b;
+                                    when "100"  => test := a = b;
+                                    when "101"  => test := unsigned(a) >= unsigned(b);
+                                    when "110"  => test := unsigned(a) < unsigned(b);
+                                    when others => test := FALSE;
                                 end case;	 
+					expected(0) := s(0);
 ---------------------------------------END MODIFY--------------------------------------------------------------
                             -- "010" is not valid -> ignore
                             -- logical unit

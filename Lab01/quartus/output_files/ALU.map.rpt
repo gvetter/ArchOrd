@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ALU
-Wed Sep 27 10:50:08 2017
+Tue Oct 10 18:39:13 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -13,12 +13,11 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Logic Cells Representing Combinational Loops
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -45,13 +44,13 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Sep 27 10:50:08 2017       ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct 10 18:39:13 2017       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; ALU                                         ;
 ; Top-level Entity Name              ; ALU                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 164                                         ;
-;     Total combinational functions  ; 164                                         ;
+; Total logic elements               ; 634                                         ;
+;     Total combinational functions  ; 634                                         ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 102                                         ;
@@ -174,36 +173,36 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------------+----------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 164         ;
-;                                             ;             ;
-; Total combinational functions               ; 164         ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 65          ;
-;     -- 3 input functions                    ; 97          ;
-;     -- <=2 input functions                  ; 2           ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 102         ;
-;     -- arithmetic mode                      ; 62          ;
-;                                             ;             ;
-; Total registers                             ; 0           ;
-;     -- Dedicated logic registers            ; 0           ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 102         ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; op[0]~input ;
-; Maximum fan-out                             ; 34          ;
-; Total fan-out                               ; 689         ;
-; Average fan-out                             ; 1.87        ;
-+---------------------------------------------+-------------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 634        ;
+;                                             ;            ;
+; Total combinational functions               ; 634        ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 308        ;
+;     -- 3 input functions                    ; 278        ;
+;     -- <=2 input functions                  ; 48         ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 601        ;
+;     -- arithmetic mode                      ; 33         ;
+;                                             ;            ;
+; Total registers                             ; 0          ;
+;     -- Dedicated logic registers            ; 0          ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 102        ;
+;                                             ;            ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; b[0]~input ;
+; Maximum fan-out                             ; 82         ;
+; Total fan-out                               ; 2294       ;
+; Average fan-out                             ; 2.74       ;
++---------------------------------------------+------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -211,53 +210,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Entity Name ; Library Name ;
 +--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------+--------------+
-; |ALU                           ; 164 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 102  ; 0            ; |ALU                           ; ALU         ; work         ;
-;    |add_sub:add_sub_0|         ; 96 (96)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|add_sub:add_sub_0         ; add_sub     ; work         ;
-;    |multiplexer:multiplexer_0| ; 68 (68)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|multiplexer:multiplexer_0 ; multiplexer ; work         ;
+; |ALU                           ; 634 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 102  ; 0            ; |ALU                           ; ALU         ; work         ;
+;    |add_sub:add_sub_0|         ; 66 (66)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|add_sub:add_sub_0         ; add_sub     ; work         ;
+;    |comparator:comparator_0|   ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|comparator:comparator_0   ; comparator  ; work         ;
+;    |logic_unit:logic_unit_0|   ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|logic_unit:logic_unit_0   ; logic_unit  ; work         ;
+;    |multiplexer:multiplexer_0| ; 201 (201)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|multiplexer:multiplexer_0 ; multiplexer ; work         ;
+;    |shift_unit:shift_unit_0|   ; 326 (326)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|shift_unit:shift_unit_0   ; shift_unit  ; work         ;
 +--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops                ;
-+--------------------------------------------------------+----+
-; Logic Cell Name                                        ;    ;
-+--------------------------------------------------------+----+
-; add_sub:add_sub_0|carry                                ;    ;
-; add_sub:add_sub_0|temp~31                              ;    ;
-; add_sub:add_sub_0|temp~32                              ;    ;
-; add_sub:add_sub_0|temp~33                              ;    ;
-; add_sub:add_sub_0|temp~34                              ;    ;
-; add_sub:add_sub_0|temp~35                              ;    ;
-; add_sub:add_sub_0|temp~36                              ;    ;
-; add_sub:add_sub_0|temp~37                              ;    ;
-; add_sub:add_sub_0|temp~38                              ;    ;
-; add_sub:add_sub_0|temp~39                              ;    ;
-; add_sub:add_sub_0|temp~40                              ;    ;
-; add_sub:add_sub_0|temp~41                              ;    ;
-; add_sub:add_sub_0|temp~42                              ;    ;
-; add_sub:add_sub_0|temp~43                              ;    ;
-; add_sub:add_sub_0|temp~44                              ;    ;
-; add_sub:add_sub_0|temp~45                              ;    ;
-; add_sub:add_sub_0|temp~46                              ;    ;
-; add_sub:add_sub_0|temp~47                              ;    ;
-; add_sub:add_sub_0|temp~48                              ;    ;
-; add_sub:add_sub_0|temp~49                              ;    ;
-; add_sub:add_sub_0|temp~50                              ;    ;
-; add_sub:add_sub_0|temp~51                              ;    ;
-; add_sub:add_sub_0|temp~52                              ;    ;
-; add_sub:add_sub_0|temp~53                              ;    ;
-; add_sub:add_sub_0|temp~54                              ;    ;
-; add_sub:add_sub_0|temp~55                              ;    ;
-; add_sub:add_sub_0|temp~56                              ;    ;
-; add_sub:add_sub_0|temp~57                              ;    ;
-; add_sub:add_sub_0|temp~58                              ;    ;
-; add_sub:add_sub_0|temp~59                              ;    ;
-; add_sub:add_sub_0|temp~60                              ;    ;
-; add_sub:add_sub_0|temp~61                              ;    ;
-; Number of logic cells representing combinational loops ; 32 ;
-+--------------------------------------------------------+----+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -275,14 +235,20 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |ALU|multiplexer:multiplexer_0|Mux1 ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ALU|logic_unit:logic_unit_0|r[0]   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ALU|logic_unit:logic_unit_0|r[4]    ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |ALU|multiplexer:multiplexer_0|Mux17 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |ALU|multiplexer:multiplexer_0|Mux15 ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |ALU|multiplexer:multiplexer_0|Mux24 ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |ALU|multiplexer:multiplexer_0|Mux6  ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |ALU|multiplexer:multiplexer_0|Mux28 ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ALU|multiplexer:multiplexer_0|Mux3  ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ALU|multiplexer:multiplexer_0|Mux0  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -291,16 +257,18 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 102                         ;
-; cycloneiii_lcell_comb ; 164                         ;
-;     arith             ; 62                          ;
-;         3 data inputs ; 62                          ;
-;     normal            ; 102                         ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 35                          ;
-;         4 data inputs ; 65                          ;
+; cycloneiii_lcell_comb ; 634                         ;
+;     arith             ; 33                          ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 32                          ;
+;     normal            ; 601                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 46                          ;
+;         3 data inputs ; 246                         ;
+;         4 data inputs ; 308                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.10                        ;
-; Average LUT depth     ; 5.41                        ;
+; Max LUT depth         ; 9.20                        ;
+; Average LUT depth     ; 7.20                        ;
 +-----------------------+-----------------------------+
 
 
@@ -309,7 +277,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -319,7 +287,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Wed Sep 27 10:49:55 2017
+    Info: Processing started: Tue Oct 10 18:38:58 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file ALU.bdf
@@ -342,8 +310,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file /home/g
 Info (12127): Elaborating entity "ALU" for the top level hierarchy
 Info (12128): Elaborating entity "multiplexer" for hierarchy "multiplexer:multiplexer_0"
 Info (12128): Elaborating entity "add_sub" for hierarchy "add_sub:add_sub_0"
-Warning (10631): VHDL Process Statement warning at add_sub.vhd(23): inferring latch(es) for signal or variable "carry", which holds its previous value in one or more paths through the process File: /home/guillaume/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
-Info (10041): Inferred latch for "carry" at add_sub.vhd(23) File: /home/guillaume/ArchOrd/Lab01/vhdl/add_sub.vhd Line: 23
 Info (12128): Elaborating entity "comparator" for hierarchy "comparator:comparator_0"
 Info (12128): Elaborating entity "logic_unit" for hierarchy "logic_unit:logic_unit_0"
 Warning (10631): VHDL Process Statement warning at logic_unit.vhd(16): inferring latch(es) for signal or variable "r", which holds its previous value in one or more paths through the process File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
@@ -380,7 +346,6 @@ Info (10041): Inferred latch for "r[29]" at logic_unit.vhd(16) File: /home/guill
 Info (10041): Inferred latch for "r[30]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
 Info (10041): Inferred latch for "r[31]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
 Info (12128): Elaborating entity "shift_unit" for hierarchy "shift_unit:shift_unit_0"
-Warning (10541): VHDL Signal Declaration warning at shift_unit.vhd(10): used implicit default value for signal "r" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/guillaume/ArchOrd/Lab01/vhdl/shift_unit.vhd Line: 10
 Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[31]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
 Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[30]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
 Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[29]" is permanently enabled File: /home/guillaume/ArchOrd/Lab01/vhdl/logic_unit.vhd Line: 16
@@ -416,14 +381,14 @@ Warning (14026): LATCH primitive "logic_unit:logic_unit_0|r[0]" is permanently e
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 266 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 736 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 70 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 164 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
-    Info: Peak virtual memory: 1246 megabytes
-    Info: Processing ended: Wed Sep 27 10:50:08 2017
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:30
+    Info (21061): Implemented 634 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
+    Info: Peak virtual memory: 1251 megabytes
+    Info: Processing ended: Tue Oct 10 18:39:13 2017
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:33
 
 

@@ -28,44 +28,39 @@ begin
 	rotate: process(a, b, op, rot)
 	variable op_temp	:std_logic_vector(4 downto 0);
 	variable temp		:std_logic_vector(4 downto 0);
-	variable rot_var	:std_logic_vector(31 downto 0);
 	begin
 		-- We use the same thing that we used in the add_sub part (more or less)
-		op_temp 	:= (4 downto 1 => '0') & op(0);
-		temp		:= std_logic_vector(unsigned(b xor (4 downto 0 => op(0)))+unsigned(op_temp));
-		rot_var	:= a;
+		op_temp := (4 downto 1 => '0' & op(0));
+		temp	:= std_logic_vector(unsigned(b xor (4 downto 0 => op(0)))+unsigned(op_temp));
+		rotate 	:= a;
 		for i in 0 to 4 loop
 		    if (temp(i) = '1') then
-		        rot_var := rot_var(31 - (2**i) downto 0) & rot_var(31 downto 32 - (2**i));
+		        rot := rot(31 - (2**i) downto 0) & rot(31 downto 32 - (2**i));
 		    end if;
 		end loop;
-		rot <= rot_var;
 	end process;
 
-	sr_process: process(a, b, op)
+	srl_process: process(a, b, op)
 	variable carry : std_logic;
-	variable sr_var: std_logic_vector(31 downto 0);
 	begin
-		carry	:= op(2) and a(31);
-		sr_var:= a;
+		sign	:= op(2) and a(31);
+		sr	:= a;
 		for i in 0 to 4 loop
 			if (b(i) = '1') then
-				sr_var := ((2 ** i) - 1 downto 0 => carry) & sr_var(31 downto 2**i);
+				sr := ((2 ** i) - 1 downto 0 => carry) & sr(31 downto 2**i);
 			end if;
 		end loop;
-		sr <= sr_var;
 	end process;
 
-	sl_process: process(a, b)
-	variable sl_var: std_logic_vector(31 downto 0);
+	sh_left : process(a, b)
 	begin
-		sl_var:= a;
+		sl:= a;
 		for i in 0 to 4 loop
 			if (b(i) = '1') then
-				sl_var := sl_var(31 - (2**i) downto 0) & ((2**i) - 1 downto 0 => '0');
+				sl := sl(31 - (2**i) downto 0) & ((2**i) - 1 downto 0 => '0');
 			end if;
 		end loop;
-		sl <= sl_var;
+		shift_left <= v;
 	end process;
 		
 
