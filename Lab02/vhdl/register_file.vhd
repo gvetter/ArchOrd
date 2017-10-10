@@ -17,22 +17,25 @@ end register_file;
 
 architecture synth of register_file is
     type reg_type is array (0 to 31) of std_logic_vector(31 downto 0);
-    signal reg_array : reg_type := (others => (others => '0'));
+    signal reg: reg_type := (others => (others => '0'));
 
 begin
-    -- asynchronous read
-    a <= reg_array(to_integer(unsigned(aa)));
-    b <= reg_array(to_integer(unsigned(ab)));
+    
+    a <= reg(to_integer(unsigned(aa)));
+    b <= reg(to_integer(unsigned(ab)));
 
-    -- synchronous write
     process(clk)
     begin
+	 
         if (rising_edge(clk)) then
+		  
             if (wren = '1') then
-                reg_array(to_integer(unsigned(aw))) <= wrdata;
+                reg(to_integer(unsigned(aw))) <= wrdata;
             end if;
-            reg_array(0) <= (others => '0');
+            reg(0) <= (others => '0');
+				
         end if;
+		  
     end process;
 
 end synth;
