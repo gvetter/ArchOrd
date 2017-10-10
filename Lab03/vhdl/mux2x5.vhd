@@ -12,4 +12,9 @@ end mux2x5;
 
 architecture synth of mux2x5 is
 begin
+ case sel is
+	when '0' => o <= i0;
+	when '1' => o <= i1;
+	when others => o <= i0;
+	end case;
 end synth;
