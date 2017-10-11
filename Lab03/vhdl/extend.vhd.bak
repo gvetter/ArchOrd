@@ -10,11 +10,6 @@ entity extend is
 end extend;
 
 architecture synth of extend is
-signal temp : std_logic_vector(15 downto 0);
 begin
-	process(imm16, signed)
-	begin
-	temp <= signed & (14 downto 0 => '0');
-	imm32 <= temp & imm16;
-	end process;
+imm32 <= (signed & ((30 downto 16) => '0') & imm16);
 end synth;
