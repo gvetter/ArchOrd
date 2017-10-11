@@ -73,18 +73,20 @@ begin
 		sel_rC <= '0';
 		read <= '0';
 		write <= '0';
-		op_alu <= ((5 downto 0) => '0');
+		op_alu <= (5 downto 0 => '0');
 		
 		case state is
 		
 			when FETCH1 => --enable to read the address--
-				next_state <= FETCH2;
+				
 				read <= '1';
+				next_state <= FETCH2;
 			
 			when FETCH2 => --enable to store instruction in PC and increment IR--
-				next_state <= DECODE;
+				
 				pc_en <= '1';
 				ir_en <= '1';
+				next_state <= DECODE;
 				
 			when DECODE => --identify instruction to select next_state--
 			
@@ -97,8 +99,8 @@ begin
 							when "0x31" | "0x39" | "0x08" | "0x10" | "0x06" | "0x0E" | "0x16" | "0x1E" | "0x13" | "0x1B" | "0x3B" =>
 								next_state <= R_OP;
 								
-							-- EXECUTE (slli, srli, srai)--
-							when "0x12" | "0x1A" | "0x3A" =>
+							-- EXECUTE (slli, srli, srai, roli)--
+							when "0x12" | "0x1A" | "0x3A" | "0x02" =>
 								next_state <= REXECUTE;
 							
 							--JMP (ret, jmp)--
@@ -151,19 +153,85 @@ begin
 				end case;
 				
 			when R_OP =>
-				next_state <= FETCH2;
+				
 				sel_b <= '1';
 				sel_rC <= '1';
 				rf_wren <= '1';
 				read <= '1'; --next instruction--
+				next_state <= FETCH2;
 			
 			when REXECUTE =>
-				next_state <= FETCH2;
+				
 				sel_rC <= '1';
 				rf_wren <= '1';
 				read <= '1';
+				next_state <= FETCH2;
 			
-			when 
-		
+			when JMP =>
+				pc_en <= '1';
+				pc_sel_a <= '1';
+				next_state <= FETCH1;
+				
+			when CALLR => 
+				pc_en <= '1';
+				pc_sel_a <= '1';
+				sel_pc <= '1';
+				sel_rC <= '1';
+				rf_wren <= '1';
+				next_state <= FETCH1;
+				
+			when BREAK =>
+				next_state <= BREAK;
+				
+			when I_OP =>
+				imm_signed <= '1';
+				rf_wren <= '1';
+				read <= '1';
+				next_state <= FETCH2;
+				
+			when IEXECUTE =>
+				rf_wren <= '1';
+				read <= '1';
+				next_state <= FETCH2;
+				
+			when CALL =>
+				pc_en <= '1';
+				pc_sel_imm <= '1';
+				sel_pc <= '1';
+				sel_ra <= '1';
+				rf_wren <= '1';
+				next_state <= FETCH1;
+				
+			when LOAD1 =>
+				imm_signed <= '1';
+				sel_addr <= '1';
+				read <= '1';
+				next_state <= LOAD2;
+			
+			when LOAD2 =>
+				sel_mem <= '1';
+				rf_wren <= '1';
+				read <= '1';
+				next_state <= FETCH2;
+			
+			when STORE =>
+				imm_signed <= '1';
+				sel_addr <= '1';
+				write <= '1';
+				next_state <= FETCH1;
+				
+			when BRANCH =>
+				sel_b <= '1';
+				branch_op <= '1';
+				pc_add_imm <= '1';
+				next_state <= FETCH1
+			
+			when JMPI =>
+				pc_en <= '1';
+				pc_sel_imm <= '1';
+				next_state <= FETCH1;
+		end case;
+	end process;
+				
 		
 end synth;
