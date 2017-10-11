@@ -1,6 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
 
 entity PC is
     port(
@@ -18,4 +19,12 @@ end PC;
 
 architecture synth of PC is
 begin
+if (rising_edge(clk)) then
+		if (enable = '1') then 
+			addr <= ((31 downto 16 => '0') & (unsigned(a) + 4);
+		end if;
+		if (reset_n = '1') then
+			addr <= ((31 downto 0) => '0');
+		end if;
+	end if;
 end synth;
