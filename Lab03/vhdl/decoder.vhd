@@ -1,14 +1,13 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.unsigned;
 
 entity decoder is
     port(
-			address : in  std_logic_vector(15 downto 0);
-			cs_LEDS : out std_logic;
-			cs_RAM  : out std_logic;
-			cs_ROM  : out std_logic;
-			cs_BUTTONS: out std_logic
+        address : in  std_logic_vector(15 downto 0);
+        cs_LEDS : out std_logic;
+        cs_RAM  : out std_logic;
+        cs_ROM  : out std_logic
+	cs_BUTTONS: out std_logic;
     );
 end decoder;
 

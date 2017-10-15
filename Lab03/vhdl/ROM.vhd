@@ -32,7 +32,7 @@ begin
 	
 
 
-	read_process: process(clk, read, cs)
+	read: process(clk, read, cs)
     begin
         if (rising_edge(clk)) then
             read_reg <= read and cs;
