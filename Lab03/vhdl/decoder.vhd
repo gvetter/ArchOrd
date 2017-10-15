@@ -6,8 +6,8 @@ entity decoder is
         address : in  std_logic_vector(15 downto 0);
         cs_LEDS : out std_logic;
         cs_RAM  : out std_logic;
-        cs_ROM  : out std_logic
-	cs_BUTTONS: out std_logic;
+        cs_ROM  : out std_logic;
+	cs_BUTTONS: out std_logic
     );
 end decoder;
 

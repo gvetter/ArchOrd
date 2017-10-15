@@ -56,7 +56,7 @@ begin
 	process(state, op, opx)
 	begin
 	---intitialisation of out variables at 0---
-		nextstate <= state;
+		next_state <= state;
 		branch_op <= '0' ;
 		imm_signed <= '0' ;
 		ir_en <= '0' ;
@@ -92,27 +92,27 @@ begin
 			
 				case op & "00" is
 				
-					when "0x3A" -- that'opcode for R-type--
+					when X"3A" => -- that'opcode for R-type--
 					
 						case opx & "00" is
 							-- R_OP (add, sub, cmpge, cmplt, nor, and, or, xor, sll, srl, sra)--
-							when "0x31" | "0x39" | "0x08" | "0x10" | "0x06" | "0x0E" | "0x16" | "0x1E" | "0x13" | "0x1B" | "0x3B" =>
+							when X"31" | X"39" | X"08" | X"10" | X"06" | X"0E" | X"16" | X"1E" | X"13" | X"1B" | X"3B" =>
 								next_state <= R_OP;
 								
 							-- EXECUTE (slli, srli, srai, roli)--
-							when "0x12" | "0x1A" | "0x3A" | "0x02" =>
+							when X"12" | X"1A" | X"3A" | X"02" =>
 								next_state <= REXECUTE;
 							
 							--JMP (ret, jmp)--
-							when "0x05" | "0x0D" =>
+							when X"05" | X"0D" =>
 								next_state <= JMP;
 								
 							--CALLR (callr)--
-							when "0x1D" =>
+							when X"1D" =>
 								next_state <= CALLR;
 								
 							--BREAK (break)--
-							when "0x34" =>
+							when X"34" =>
 								next_state <= BREAK;
 							
 							when others =>
@@ -121,31 +121,31 @@ begin
 						end case;
 						
 					--I_OP (addi, cmpgei, cmplti, cmpnei, cmpeqi)
-					when "0x04" | "0x08" | "0x10" | "0x18" | "0x20" =>
-						next_state <= I_OP
+					when X"04" | X"08" | X"10" | X"18" | X"20" =>
+						next_state <= I_OP;
 					
 					--I_OP to EXECUTE (andi, ori, xori, cmpgeui, cmpltui)
-					when "0x0C" | "0x14" | "Ox1C" | "0x28" | "0x30" =>
+					when X"0C" | X"14" | X"1C" | X"28" | X"30" =>
 						next_state <= IEXECUTE;
 					
 					--CALL(call)--
-					when "0x00" =>
+					when X"00" =>
 						next_state <= CALL;
 					
 					--LOAD(ldw)--
-					when "0x17" =>
+					when X"17" =>
 						next_state <= LOAD1;
 					
 					--STORE(stw)--
-					when "0x15" =>
+					when X"15" =>
 						next_state <= STORE;
 					
 					--BRANCH(br, bge, blt, bne, beq, bgeu, bltu)--
-					when "0x06" | "0x0E" | "0x16" | "0x1E" | "0x26" | "0x2E" | "0x36" =>
+					when X"06" | X"0E" | X"16" | X"1E" | X"26" | X"2E" | X"36" =>
 						next_state <= BRANCH;
 						
 					--JMPI(jmpi)--
-					when "0x01" =>
+					when X"01" =>
 						next_state <= JMPI;
 						
 					when others => 
@@ -224,7 +224,7 @@ begin
 				sel_b <= '1';
 				branch_op <= '1';
 				pc_add_imm <= '1';
-				next_state <= FETCH1
+				next_state <= FETCH1;
 			
 			when JMPI =>
 				pc_en <= '1';

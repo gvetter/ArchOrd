@@ -22,8 +22,8 @@ begin
 process(clk, reset_n, en, a)
 begin
 if (rising_edge(clk)) then
-		if (enable = '1') then 
-			addr <= (31 downto 16 => '0') & (unsigned(a) + 4);
+		if (en = '1') then 
+			addr <= (31 downto 16 => '0') & std_logic_vector(unsigned(a) + 4);
 		end if;
 		if (reset_n = '1') then
 			addr <= (31 downto 0 => '0');
