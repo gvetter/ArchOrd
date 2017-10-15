@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.unsigned;
 
 entity decoder is
     port(
@@ -24,13 +25,13 @@ begin
 	cs_RAM <= '0';
 	cs_ROM <= '0';
 	cs_BUTTONS <= '0';
-	if(address < "0x0FFD" and address >= "0x0000") then
+	if(address < X"0FFD") and (address >= X"0000") then
 		cs_ROM <= '1';
-	elsif (address < "0x1FFD" and address >= "0x1000") then
+	elsif (address < X"1FFD") and (address >= X"1000") then
 		cs_RAM <= '1';
-	elsif (address < "0x200D" and address >= "0x2000") then
+	elsif (address < X"200D") and (address >= X"2000") then
 		cs_LEDS <= '1';
-	elsif (address < "0x2035" and address >= "0x2030") then
+	elsif (address < X"2035") and (address >= X"2030") then
 		cs_BUTTONS <= '1';
 	end if;
 	end process;	
