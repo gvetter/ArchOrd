@@ -95,8 +95,8 @@ begin
 					when X"3A" => -- that'opcode for R-type--
 					
 						case opx & "00" is
-							-- R_OP (add, sub, cmpge, cmplt, nor, and, or, xor, sll, srl, sra)--
-							when X"31" | X"39" | X"08" | X"10" | X"06" | X"0E" | X"16" | X"1E" | X"13" | X"1B" | X"3B" =>
+							-- R_OP (add, sub, cmpge, cmplt, nor, and, or, xor, sll, srl, sra, cmpne, cmpeq, cmpgeu, cmpltu, rol, ror)--
+							when X"31" | X"39" | X"08" | X"10" | X"06" | X"0E" | X"16" | X"1E" | X"13" | X"1B" | X"3B" | X"18" | X"20" | X"28" | X"30" | X"03" | X"0B" =>
 								next_state <= R_OP;
 								
 							-- EXECUTE (slli, srli, srai, roli)--
