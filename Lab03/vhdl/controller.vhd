@@ -232,6 +232,60 @@ begin
 				next_state <= FETCH1;
 		end case;
 	end process;
+	
+	process(op, opx) --ALU
+	begin
+		
+		if op(2 downto 0) = "010" then --correspond to 111010, so 010 wich is R type
+			 
+			 op_alu(2 downto 0) <= opx(5 downto 3);
+			 
+			 case opx(2 downto 0) is
+				
+				when "000" =>
+					--comparator--
+					op_alu(5 downto 3) <= "011";
+				when "001" =>
+					--sub--
+					op_alu(5 downto 3) <= "00" & opx(3);
+					
+				when "110" =>
+					--logic unit--
+					op_alu(5 downto 3) <= "100";
+				
+				when "010" | "011" =>
+					--shift--
+					op_alu(5 downto 3) <= "110";
+				
+				when others =>
+					op_alu(5 downto 3) <= "000";
+				end case;
+			
+			else --not R-Type so I-Type
+			
+			op_alu(2 downto 0) <=(5 downto 3);
+			
+			case op(2 downto 0) is
+			
+				when "100" => --logic or add
+					
+					if (op(5 downto 3)) = "000" then --add
+						op_alu(5 downto 3) <= op(5 downto 3);
+					else --logic unit
+						op_alu(5 downto 3) <= "100";
+					end if;
+				when "000" | "110" --comparator / branch
+					op_alu(5 downto 3) <= "011" 
+				
+				when others =>
+					op_alu(5 downto 3) <= "000"; --default case set at "000"
+			
+			end case;
+		end if;
+	end process;
+
+					
+			
 				
 		
 end synth;
