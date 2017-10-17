@@ -1,6 +1,6 @@
 Analysis & Synthesis report for GECKO
-Sun Oct 15 17:42:30 2017
-Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Tue Oct 17 14:52:56 2017
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
 ---------------------
@@ -33,18 +33,18 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera MegaCore Function License Agreement, or other 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
 applicable license agreement, including, without limitation, 
 that your use is for the sole purpose of programming logic 
-devices manufactured by Altera and sold by Altera or its 
+devices manufactured by Intel and sold by Intel or its 
 authorized distributors.  Please refer to the applicable 
 agreement for further details.
 
@@ -53,8 +53,8 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Oct 15 17:42:30 2017       ;
-; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct 17 14:52:56 2017       ;
+; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; GECKO                                       ;
 ; Top-level Entity Name              ; GECKO                                       ;
 ; Family                             ; Cyclone IV E                                ;
@@ -84,7 +84,7 @@ agreement for further details.
 ; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
 ; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
 ; Preserve fewer node names                                                  ; On                 ; On                 ;
-; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
 ; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
 ; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                   ; Auto               ; Auto               ;
@@ -153,61 +153,65 @@ agreement for further details.
 ; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
 ; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
 ; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
-; Synthesis Seed                                                             ; 1                  ; 1                  ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 4      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                             ;
-+----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                             ; File Name with Absolute Path                                                ; Library ;
-+----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------+---------+
-; GECKO.bdf                        ; yes             ; User Block Diagram/Schematic File     ; /home/guillaume/ArchOrd/Lab03/quartus/GECKO.bdf                             ;         ;
-; ALU.bdf                          ; yes             ; User Block Diagram/Schematic File     ; /home/guillaume/ArchOrd/Lab03/quartus/ALU.bdf                               ;         ;
-; CPU.bdf                          ; yes             ; User Block Diagram/Schematic File     ; /home/guillaume/ArchOrd/Lab03/quartus/CPU.bdf                               ;         ;
-; ../vhdl/add_sub.vhd              ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/add_sub.vhd                              ;         ;
-; ../vhdl/buttons.vhd              ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/buttons.vhd                              ;         ;
-; ../vhdl/comparator.vhd           ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/comparator.vhd                           ;         ;
-; ../vhdl/controller.vhd           ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/controller.vhd                           ;         ;
-; ../vhdl/decoder.vhd              ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/decoder.vhd                              ;         ;
-; ../vhdl/extend.vhd               ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/extend.vhd                               ;         ;
-; ../vhdl/IR.vhd                   ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd                                   ;         ;
-; ../vhdl/LEDs.vhd                 ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/LEDs.vhd                                 ;         ;
-; ../vhdl/logic_unit.vhd           ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd                           ;         ;
-; ../vhdl/multiplexer.vhd          ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/multiplexer.vhd                          ;         ;
-; ../vhdl/mux2x5.vhd               ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/mux2x5.vhd                               ;         ;
-; ../vhdl/mux2x16.vhd              ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/mux2x16.vhd                              ;         ;
-; ../vhdl/mux2x32.vhd              ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/mux2x32.vhd                              ;         ;
-; ../vhdl/PC.vhd                   ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/PC.vhd                                   ;         ;
-; ../vhdl/RAM.vhd                  ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/RAM.vhd                                  ;         ;
-; ../vhdl/register_file.vhd        ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/register_file.vhd                        ;         ;
-; ../vhdl/ROM.vhd                  ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/ROM.vhd                                  ;         ;
-; ../vhdl/ROM_Block.vhd            ; yes             ; User Wizard-Generated File            ; /home/guillaume/ArchOrd/Lab03/vhdl/ROM_Block.vhd                            ;         ;
-; ../vhdl/shift_unit.vhd           ; yes             ; User VHDL File                        ; /home/guillaume/ArchOrd/Lab03/vhdl/shift_unit.vhd                           ;         ;
-; ROM.hex                          ; yes             ; User Hexadecimal (Intel-Format) File  ; /home/guillaume/ArchOrd/Lab03/quartus/ROM.hex                               ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                          ; /opt/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                          ; /opt/altera_lite/16.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                          ; /opt/altera_lite/16.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                          ; /opt/altera_lite/16.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal160.inc                   ; yes             ; Megafunction                          ; /opt/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                          ; /opt/altera_lite/16.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                          ; /opt/altera_lite/16.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                       ; yes             ; Megafunction                          ; /opt/altera_lite/16.0/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                          ; /opt/altera_lite/16.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_rna1.tdf           ; yes             ; Auto-Generated Megafunction           ; /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf                ;         ;
-; db/altsyncram_3t31.tdf           ; yes             ; Auto-Generated Megafunction           ; /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf                ;         ;
-+----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+---------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                             ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+---------------------------------------+------------------------------------------------------------------------------+---------+
+; GECKO.bdf                        ; yes             ; User Block Diagram/Schematic File     ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/GECKO.bdf                ;         ;
+; ALU.bdf                          ; yes             ; User Block Diagram/Schematic File     ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/ALU.bdf                  ;         ;
+; CPU.bdf                          ; yes             ; User Block Diagram/Schematic File     ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/CPU.bdf                  ;         ;
+; ../vhdl/add_sub.vhd              ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/add_sub.vhd                 ;         ;
+; ../vhdl/buttons.vhd              ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/buttons.vhd                 ;         ;
+; ../vhdl/comparator.vhd           ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/comparator.vhd              ;         ;
+; ../vhdl/controller.vhd           ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/controller.vhd              ;         ;
+; ../vhdl/decoder.vhd              ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/decoder.vhd                 ;         ;
+; ../vhdl/extend.vhd               ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/extend.vhd                  ;         ;
+; ../vhdl/IR.vhd                   ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd                      ;         ;
+; ../vhdl/LEDs.vhd                 ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/LEDs.vhd                    ;         ;
+; ../vhdl/logic_unit.vhd           ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd              ;         ;
+; ../vhdl/multiplexer.vhd          ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/multiplexer.vhd             ;         ;
+; ../vhdl/mux2x5.vhd               ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/mux2x5.vhd                  ;         ;
+; ../vhdl/mux2x16.vhd              ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/mux2x16.vhd                 ;         ;
+; ../vhdl/mux2x32.vhd              ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/mux2x32.vhd                 ;         ;
+; ../vhdl/PC.vhd                   ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/PC.vhd                      ;         ;
+; ../vhdl/RAM.vhd                  ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/RAM.vhd                     ;         ;
+; ../vhdl/register_file.vhd        ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/register_file.vhd           ;         ;
+; ../vhdl/ROM.vhd                  ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/ROM.vhd                     ;         ;
+; ../vhdl/ROM_Block.vhd            ; yes             ; User Wizard-Generated File            ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/ROM_Block.vhd               ;         ;
+; ../vhdl/shift_unit.vhd           ; yes             ; User VHDL File                        ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/shift_unit.vhd              ;         ;
+; ROM.hex                          ; yes             ; User Hexadecimal (Intel-Format) File  ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/ROM.hex                  ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                          ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                          ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                          ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                          ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal170.inc                   ; yes             ; Megafunction                          ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                          ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                          ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                          ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                          ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_rna1.tdf           ; yes             ; Auto-Generated Megafunction           ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf   ;         ;
+; db/altsyncram_3t31.tdf           ; yes             ; Auto-Generated Megafunction           ; C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf   ;         ;
++----------------------------------+-----------------+---------------------------------------+------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------+
@@ -241,13 +245,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |GECKO                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 102  ; 0            ; |GECKO              ; GECKO       ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |GECKO                     ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 102  ; 0            ; |GECKO              ; GECKO       ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1329,9 +1333,11 @@ Encoding Type:  One-Hot
 ; CPU:inst|register_file:register_file_0|reg[14][31] ; Lost fanout                                 ;
 ; CPU:inst|register_file:register_file_0|reg[12][31] ; Lost fanout                                 ;
 ; CPU:inst|register_file:register_file_0|reg[15][31] ; Lost fanout                                 ;
+; CPU:inst|IR:IR_0|Q[0..6,11..15,21,27..31]          ; Lost fanout                                 ;
+; CPU:inst|controller:controller_0|state.I_OP        ; Lost fanout                                 ;
+; CPU:inst|IR:IR_0|Q[7..10,16]                       ; Lost fanout                                 ;
 ; CPU:inst|PC:PC_0|addr[0]                           ; Lost fanout                                 ;
 ; CPU:inst|controller:controller_0|state.CALL        ; Lost fanout                                 ;
-; CPU:inst|controller:controller_0|state.I_OP        ; Lost fanout                                 ;
 ; CPU:inst|controller:controller_0|state.IEXECUTE    ; Lost fanout                                 ;
 ; ROM:ROM_0|read_reg                                 ; Lost fanout                                 ;
 ; buttons:buttons_0|address_reg                      ; Lost fanout                                 ;
@@ -1340,11 +1346,10 @@ Encoding Type:  One-Hot
 ; LEDs:LEDs_0|reg_address[1]                         ; Lost fanout                                 ;
 ; CPU:inst|controller:controller_0|state.FETCH2      ; Lost fanout                                 ;
 ; CPU:inst|PC:PC_0|addr[1]                           ; Lost fanout                                 ;
-; CPU:inst|IR:IR_0|Q[0..6,27..31]                    ; Lost fanout                                 ;
+; CPU:inst|IR:IR_0|Q[17..20]                         ; Lost fanout                                 ;
+; buttons:buttons_0|edges[0..3]                      ; Lost fanout                                 ;
 ; CPU:inst|controller:controller_0|state.DECODE      ; Lost fanout                                 ;
 ; CPU:inst|controller:controller_0|state.FETCH1      ; Lost fanout                                 ;
-; CPU:inst|IR:IR_0|Q[7..21]                          ; Lost fanout                                 ;
-; buttons:buttons_0|edges[0..3]                      ; Lost fanout                                 ;
 ; buttons:buttons_0|buttons_reg[0..3]                ; Lost fanout                                 ;
 ; CPU:inst|PC:PC_0|addr[2..15]                       ; Lost fanout                                 ;
 ; Total Number of Removed Registers = 1231           ;                                             ;
@@ -1393,8 +1398,7 @@ Encoding Type:  One-Hot
 ;                                                    ;                           ; LEDs:LEDs_0|LEDs_reg[85], LEDs:LEDs_0|LEDs_reg[84], LEDs:LEDs_0|counter[7],           ;
 ;                                                    ;                           ; LEDs:LEDs_0|counter[6], LEDs:LEDs_0|counter[5], LEDs:LEDs_0|counter[4],               ;
 ;                                                    ;                           ; LEDs:LEDs_0|counter[3], LEDs:LEDs_0|counter[2], LEDs:LEDs_0|counter[1],               ;
-;                                                    ;                           ; LEDs:LEDs_0|counter[0], CPU:inst|IR:IR_0|Q[22],                                       ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[16][0],                                    ;
+;                                                    ;                           ; LEDs:LEDs_0|counter[0], CPU:inst|register_file:register_file_0|reg[16][0],            ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[9][0],                                     ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[8][0],                                     ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[12][0],                                    ;
@@ -1517,6 +1521,8 @@ Encoding Type:  One-Hot
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[16][30],                                   ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[9][30],                                    ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[8][30],                                    ;
+;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[2][30],                                    ;
+;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[3][30],                                    ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][30],                                    ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[12][30],                                   ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[9][31],                                    ;
@@ -1525,191 +1531,49 @@ Encoding Type:  One-Hot
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[2][31],                                    ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[3][31],                                    ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][31],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[12][31],                                   ;
-;                                                    ;                           ; CPU:inst|controller:controller_0|state.CALL,                                          ;
-;                                                    ;                           ; CPU:inst|controller:controller_0|state.I_OP, buttons:buttons_0|address_reg,           ;
-;                                                    ;                           ; CPU:inst|PC:PC_0|addr[1], CPU:inst|IR:IR_0|Q[4], CPU:inst|IR:IR_0|Q[5],               ;
-;                                                    ;                           ; CPU:inst|IR:IR_0|Q[0], CPU:inst|IR:IR_0|Q[1], CPU:inst|IR:IR_0|Q[2],                  ;
-;                                                    ;                           ; CPU:inst|IR:IR_0|Q[3], CPU:inst|controller:controller_0|state.DECODE,                 ;
-;                                                    ;                           ; buttons:buttons_0|edges[0], buttons:buttons_0|edges[1], buttons:buttons_0|edges[2],   ;
-;                                                    ;                           ; buttons:buttons_0|edges[3], buttons:buttons_0|buttons_reg[0],                         ;
+;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[12][31], CPU:inst|IR:IR_0|Q[15],           ;
+;                                                    ;                           ; CPU:inst|IR:IR_0|Q[21], CPU:inst|controller:controller_0|state.I_OP,                  ;
+;                                                    ;                           ; CPU:inst|controller:controller_0|state.CALL, buttons:buttons_0|address_reg,           ;
+;                                                    ;                           ; CPU:inst|PC:PC_0|addr[1], buttons:buttons_0|edges[0], buttons:buttons_0|edges[1],     ;
+;                                                    ;                           ; buttons:buttons_0|edges[2], buttons:buttons_0|edges[3],                               ;
+;                                                    ;                           ; CPU:inst|controller:controller_0|state.DECODE, buttons:buttons_0|buttons_reg[0],      ;
 ;                                                    ;                           ; buttons:buttons_0|buttons_reg[1], buttons:buttons_0|buttons_reg[2],                   ;
-;                                                    ;                           ; buttons:buttons_0|buttons_reg[3], CPU:inst|PC:PC_0|addr[4], CPU:inst|PC:PC_0|addr[6], ;
-;                                                    ;                           ; CPU:inst|PC:PC_0|addr[7], CPU:inst|PC:PC_0|addr[8], CPU:inst|PC:PC_0|addr[10],        ;
-;                                                    ;                           ; CPU:inst|PC:PC_0|addr[12], CPU:inst|PC:PC_0|addr[13], CPU:inst|PC:PC_0|addr[14]       ;
-; CPU:inst|controller:controller_0|state.BRANCH      ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][30],                                    ;
-;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][30],                                    ;
-;                                                    ;                           ; CPU:inst|controller:controller_0|state.FETCH2, CPU:inst|IR:IR_0|Q[10],                ;
-;                                                    ;                           ; CPU:inst|IR:IR_0|Q[11], CPU:inst|IR:IR_0|Q[12], CPU:inst|IR:IR_0|Q[13],               ;
-;                                                    ;                           ; CPU:inst|IR:IR_0|Q[14], CPU:inst|IR:IR_0|Q[15], CPU:inst|IR:IR_0|Q[16],               ;
-;                                                    ;                           ; CPU:inst|IR:IR_0|Q[17], CPU:inst|IR:IR_0|Q[18], CPU:inst|IR:IR_0|Q[19],               ;
-;                                                    ;                           ; CPU:inst|IR:IR_0|Q[20], CPU:inst|IR:IR_0|Q[21]                                        ;
-; CPU:inst|PC:PC_0|addr[16]                          ; Stuck at GND              ; buttons:buttons_0|read_reg, CPU:inst|IR:IR_0|Q[24], CPU:inst|IR:IR_0|Q[23],           ;
-;                                                    ; due to stuck port data_in ; ROM:ROM_0|read_reg, RAM:RAM_0|reg_read, LEDs:LEDs_0|reg_read,                         ;
-;                                                    ;                           ; LEDs:LEDs_0|reg_address[1], CPU:inst|IR:IR_0|Q[6],                                    ;
-;                                                    ;                           ; CPU:inst|controller:controller_0|state.FETCH1, CPU:inst|PC:PC_0|addr[2],              ;
-;                                                    ;                           ; CPU:inst|PC:PC_0|addr[3], CPU:inst|PC:PC_0|addr[15]                                   ;
+;                                                    ;                           ; buttons:buttons_0|buttons_reg[3], CPU:inst|PC:PC_0|addr[4], CPU:inst|PC:PC_0|addr[5], ;
+;                                                    ;                           ; CPU:inst|PC:PC_0|addr[6], CPU:inst|PC:PC_0|addr[7], CPU:inst|PC:PC_0|addr[10],        ;
+;                                                    ;                           ; CPU:inst|PC:PC_0|addr[11], CPU:inst|PC:PC_0|addr[12], CPU:inst|PC:PC_0|addr[13],      ;
+;                                                    ;                           ; CPU:inst|PC:PC_0|addr[14]                                                             ;
 ; CPU:inst|register_file:register_file_0|reg[0][0]   ; Stuck at GND              ; CPU:inst|IR:IR_0|Q[26], CPU:inst|register_file:register_file_0|reg[2][0],             ;
 ;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][0],                                     ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][0],                                     ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][1], CPU:inst|IR:IR_0|Q[30],             ;
-;                                                    ;                           ; CPU:inst|IR:IR_0|Q[29], CPU:inst|IR:IR_0|Q[28], CPU:inst|IR:IR_0|Q[27],               ;
-;                                                    ;                           ; CPU:inst|IR:IR_0|Q[31], CPU:inst|IR:IR_0|Q[9]                                         ;
-; CPU:inst|register_file:register_file_0|reg[26][16] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][16],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][16],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][16],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][16],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][16]                                    ;
-; CPU:inst|register_file:register_file_0|reg[26][4]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][4],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][4],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][4],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][4],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][4]                                     ;
-; CPU:inst|register_file:register_file_0|reg[26][2]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][2],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][2],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][2],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][2],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][2]                                     ;
-; CPU:inst|register_file:register_file_0|reg[26][6]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][6],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][6],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][6],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][6],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][6]                                     ;
-; CPU:inst|register_file:register_file_0|reg[26][0]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][0],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][0],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][0],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][0],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][0]                                     ;
-; CPU:inst|register_file:register_file_0|reg[26][8]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][8],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][8],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][8],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][8],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][8]                                     ;
-; CPU:inst|register_file:register_file_0|reg[26][10] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][10],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][10],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][10],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][10],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][10]                                    ;
-; CPU:inst|register_file:register_file_0|reg[0][24]  ; Stuck at GND              ; CPU:inst|IR:IR_0|Q[25], CPU:inst|register_file:register_file_0|reg[2][24],            ;
-;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][24], CPU:inst|IR:IR_0|Q[8],             ;
-;                                                    ;                           ; CPU:inst|PC:PC_0|addr[5]                                                              ;
-; CPU:inst|register_file:register_file_0|reg[26][12] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][12],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][12],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][12],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][12],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][12]                                    ;
-; CPU:inst|register_file:register_file_0|reg[26][14] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][14],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][14],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][14],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][14],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][14]                                    ;
-; CPU:inst|register_file:register_file_0|reg[26][18] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][18],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][18],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][18],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][18],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][18]                                    ;
-; CPU:inst|register_file:register_file_0|reg[26][20] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][20],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][20],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][20],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][20],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][20]                                    ;
-; CPU:inst|register_file:register_file_0|reg[26][30] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][30],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][30],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][30],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][30],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][30]                                    ;
-; CPU:inst|register_file:register_file_0|reg[26][22] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][22],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][22],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][22],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][22],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][22]                                    ;
-; CPU:inst|register_file:register_file_0|reg[26][24] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][24],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][24],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][24],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][24],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][24]                                    ;
-; CPU:inst|register_file:register_file_0|reg[26][28] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][28],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][28],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][28],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][28],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][28]                                    ;
-; CPU:inst|register_file:register_file_0|reg[26][26] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[22][26],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[30][26],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][26],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[27][26],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[14][26]                                    ;
+;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][1], CPU:inst|IR:IR_0|Q[28],             ;
+;                                                    ;                           ; CPU:inst|IR:IR_0|Q[27], CPU:inst|IR:IR_0|Q[30], CPU:inst|IR:IR_0|Q[31],               ;
+;                                                    ;                           ; CPU:inst|IR:IR_0|Q[29], CPU:inst|IR:IR_0|Q[3], CPU:inst|IR:IR_0|Q[14],                ;
+;                                                    ;                           ; CPU:inst|IR:IR_0|Q[9]                                                                 ;
+; CPU:inst|PC:PC_0|addr[16]                          ; Stuck at GND              ; buttons:buttons_0|read_reg, CPU:inst|IR:IR_0|Q[24], ROM:ROM_0|read_reg,               ;
+;                                                    ; due to stuck port data_in ; RAM:RAM_0|reg_read, LEDs:LEDs_0|reg_read, LEDs:LEDs_0|reg_address[1],                 ;
+;                                                    ;                           ; CPU:inst|controller:controller_0|state.FETCH1, CPU:inst|PC:PC_0|addr[2],              ;
+;                                                    ;                           ; CPU:inst|PC:PC_0|addr[3], CPU:inst|PC:PC_0|addr[15]                                   ;
+; CPU:inst|register_file:register_file_0|reg[0][31]  ; Stuck at GND              ; CPU:inst|IR:IR_0|Q[4], CPU:inst|IR:IR_0|Q[0], CPU:inst|IR:IR_0|Q[1],                  ;
+;                                                    ; due to stuck port data_in ; CPU:inst|IR:IR_0|Q[2], CPU:inst|IR:IR_0|Q[5], CPU:inst|IR:IR_0|Q[16]                  ;
+; CPU:inst|controller:controller_0|state.BRANCH      ; Stuck at GND              ; CPU:inst|IR:IR_0|Q[23], CPU:inst|IR:IR_0|Q[22],                                       ;
+;                                                    ; due to stuck port data_in ; CPU:inst|controller:controller_0|state.FETCH2, CPU:inst|IR:IR_0|Q[18],                ;
+;                                                    ;                           ; CPU:inst|IR:IR_0|Q[19], CPU:inst|IR:IR_0|Q[20]                                        ;
+; CPU:inst|register_file:register_file_0|reg[26][0]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[10][0], CPU:inst|IR:IR_0|Q[6],             ;
+;                                                    ;                           ; CPU:inst|IR:IR_0|Q[12], CPU:inst|IR:IR_0|Q[11], CPU:inst|IR:IR_0|Q[13]                ;
 ; CPU:inst|register_file:register_file_0|reg[0][16]  ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][16],                                    ;
 ;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][16],                                    ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][17], CPU:inst|PC:PC_0|addr[0]           ;
 ; CPU:inst|register_file:register_file_0|reg[0][2]   ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][2],                                     ;
 ;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][2],                                     ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][3], CPU:inst|PC:PC_0|addr[9]            ;
-; CPU:inst|register_file:register_file_0|reg[10][11] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][11],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][11],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][11], CPU:inst|PC:PC_0|addr[11]         ;
 ; CPU:inst|register_file:register_file_0|reg[0][28]  ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][28],                                    ;
 ;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][28],                                    ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][28], CPU:inst|IR:IR_0|Q[7]              ;
-; CPU:inst|register_file:register_file_0|reg[10][5]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][5],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][5],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][5]                                     ;
-; CPU:inst|register_file:register_file_0|reg[10][19] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][19],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][19],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][19]                                    ;
-; CPU:inst|register_file:register_file_0|reg[10][31] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][31],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][31],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][31]                                    ;
-; CPU:inst|register_file:register_file_0|reg[10][29] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][29],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][29],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][29]                                    ;
-; CPU:inst|register_file:register_file_0|reg[10][7]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][7],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][7],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][7]                                     ;
-; CPU:inst|register_file:register_file_0|reg[10][27] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][27],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][27],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][27]                                    ;
-; CPU:inst|register_file:register_file_0|reg[10][25] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][25],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][25],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][25]                                    ;
-; CPU:inst|register_file:register_file_0|reg[10][9]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][9],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][9],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][9]                                     ;
-; CPU:inst|register_file:register_file_0|reg[10][23] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][23],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][23],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][23]                                    ;
-; CPU:inst|register_file:register_file_0|reg[10][13] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][13],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][13],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][13]                                    ;
-; CPU:inst|register_file:register_file_0|reg[10][21] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][21],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][21],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][21]                                    ;
-; CPU:inst|register_file:register_file_0|reg[10][15] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][15],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][15],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][15]                                    ;
-; CPU:inst|register_file:register_file_0|reg[0][1]   ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][1],                                     ;
-;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][1],                                     ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][2]                                      ;
-; CPU:inst|register_file:register_file_0|reg[10][17] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][17],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][17],                                   ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][17]                                    ;
-; CPU:inst|register_file:register_file_0|reg[0][17]  ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][17],                                    ;
-;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][17],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][18]                                     ;
-; CPU:inst|register_file:register_file_0|reg[0][3]   ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][3],                                     ;
-;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][3],                                     ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][4]                                      ;
-; CPU:inst|register_file:register_file_0|reg[0][4]   ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][4],                                     ;
-;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][4],                                     ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][5]                                      ;
-; CPU:inst|register_file:register_file_0|reg[0][5]   ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][5],                                     ;
-;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][5],                                     ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][6]                                      ;
+; CPU:inst|register_file:register_file_0|reg[0][24]  ; Stuck at GND              ; CPU:inst|IR:IR_0|Q[25], CPU:inst|register_file:register_file_0|reg[2][24],            ;
+;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][24], CPU:inst|IR:IR_0|Q[8]              ;
 ; CPU:inst|register_file:register_file_0|reg[0][6]   ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][6],                                     ;
 ;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][6],                                     ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][7]                                      ;
-; CPU:inst|register_file:register_file_0|reg[0][7]   ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][7],                                     ;
-;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][7],                                     ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][8]                                      ;
 ; CPU:inst|register_file:register_file_0|reg[0][8]   ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][8],                                     ;
 ;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][8],                                     ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][9]                                      ;
@@ -1734,9 +1598,9 @@ Encoding Type:  One-Hot
 ; CPU:inst|register_file:register_file_0|reg[0][15]  ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][15],                                    ;
 ;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][15],                                    ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][16]                                     ;
-; CPU:inst|register_file:register_file_0|reg[10][3]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][3],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][3],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][3]                                     ;
+; CPU:inst|register_file:register_file_0|reg[0][17]  ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][17],                                    ;
+;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][17],                                    ;
+;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][18]                                     ;
 ; CPU:inst|register_file:register_file_0|reg[0][18]  ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][18],                                    ;
 ;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][18],                                    ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][19]                                     ;
@@ -1746,9 +1610,6 @@ Encoding Type:  One-Hot
 ; CPU:inst|register_file:register_file_0|reg[0][20]  ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][20],                                    ;
 ;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][20],                                    ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][21]                                     ;
-; CPU:inst|register_file:register_file_0|reg[0][21]  ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][21],                                    ;
-;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][21],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][22]                                     ;
 ; CPU:inst|register_file:register_file_0|reg[0][22]  ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][22],                                    ;
 ;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][22],                                    ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][23]                                     ;
@@ -1764,14 +1625,52 @@ Encoding Type:  One-Hot
 ; CPU:inst|register_file:register_file_0|reg[0][27]  ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][27],                                    ;
 ;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][27],                                    ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][27]                                     ;
+; CPU:inst|register_file:register_file_0|reg[0][7]   ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][7],                                     ;
+;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][7],                                     ;
+;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][8]                                      ;
 ; CPU:inst|register_file:register_file_0|reg[0][29]  ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][29],                                    ;
 ;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][29],                                    ;
 ;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][29]                                     ;
-; CPU:inst|register_file:register_file_0|reg[10][1]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[11][1],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[21][1],                                    ;
-;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[13][1]                                     ;
-; CPU:inst|controller:controller_0|state.CALLR       ; Stuck at GND              ; CPU:inst|controller:controller_0|state.IEXECUTE                                       ;
-;                                                    ; due to stuck port data_in ;                                                                                       ;
+; CPU:inst|register_file:register_file_0|reg[0][1]   ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][1],                                     ;
+;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][1],                                     ;
+;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][2]                                      ;
+; CPU:inst|register_file:register_file_0|reg[0][3]   ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][3],                                     ;
+;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][3],                                     ;
+;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][4]                                      ;
+; CPU:inst|register_file:register_file_0|reg[0][4]   ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][4],                                     ;
+;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][4],                                     ;
+;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][5]                                      ;
+; CPU:inst|register_file:register_file_0|reg[0][5]   ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][5],                                     ;
+;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][5],                                     ;
+;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][6]                                      ;
+; CPU:inst|controller:controller_0|state.CALLR       ; Stuck at GND              ; CPU:inst|IR:IR_0|Q[10], CPU:inst|controller:controller_0|state.IEXECUTE,              ;
+;                                                    ; due to stuck port data_in ; CPU:inst|IR:IR_0|Q[17]                                                                ;
+; CPU:inst|register_file:register_file_0|reg[0][21]  ; Stuck at GND              ; CPU:inst|register_file:register_file_0|reg[2][21],                                    ;
+;                                                    ; due to stuck port data_in ; CPU:inst|register_file:register_file_0|reg[3][21],                                    ;
+;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[1][22]                                     ;
+; CPU:inst|register_file:register_file_0|reg[26][2]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[10][2],                                    ;
+;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[10][4],                                    ;
+;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[10][18]                                    ;
+; CPU:inst|register_file:register_file_0|reg[10][3]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[26][5],                                    ;
+;                                                    ;                           ; CPU:inst|register_file:register_file_0|reg[10][6]                                     ;
+; CPU:inst|register_file:register_file_0|reg[26][8]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[10][8], CPU:inst|PC:PC_0|addr[8]           ;
+; CPU:inst|register_file:register_file_0|reg[10][1]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[26][1]                                     ;
+; CPU:inst|register_file:register_file_0|reg[10][7]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[26][7]                                     ;
+; CPU:inst|register_file:register_file_0|reg[10][9]  ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[26][9]                                     ;
+; CPU:inst|register_file:register_file_0|reg[26][10] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[10][10]                                    ;
+; CPU:inst|register_file:register_file_0|reg[10][11] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[26][11]                                    ;
+; CPU:inst|register_file:register_file_0|reg[26][12] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[10][12]                                    ;
+; CPU:inst|register_file:register_file_0|reg[10][13] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[26][13]                                    ;
+; CPU:inst|register_file:register_file_0|reg[26][14] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[10][14]                                    ;
+; CPU:inst|register_file:register_file_0|reg[10][15] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[26][15]                                    ;
+; CPU:inst|register_file:register_file_0|reg[26][16] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[10][16]                                    ;
+; CPU:inst|register_file:register_file_0|reg[26][20] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[10][20]                                    ;
+; CPU:inst|register_file:register_file_0|reg[26][22] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[10][22]                                    ;
+; CPU:inst|register_file:register_file_0|reg[26][24] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[10][24]                                    ;
+; CPU:inst|register_file:register_file_0|reg[26][26] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[10][26]                                    ;
+; CPU:inst|register_file:register_file_0|reg[26][28] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[10][28]                                    ;
+; CPU:inst|register_file:register_file_0|reg[10][29] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[26][29]                                    ;
+; CPU:inst|register_file:register_file_0|reg[26][30] ; Lost Fanouts              ; CPU:inst|register_file:register_file_0|reg[10][30]                                    ;
 +----------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------+
 
 
@@ -1799,19 +1698,27 @@ Encoding Type:  One-Hot
 +-----------------------------+------------------------------+------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |GECKO|CPU:inst|PC:PC_0|addr[11]                    ;
-; 7:1                ; 24 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |GECKO|CPU:inst|IR:IR_0|Q[8]                        ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |GECKO|CPU:inst|IR:IR_0|Q[6]                        ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |GECKO|CPU:inst|IR:IR_0|Q[3]                        ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |GECKO|CPU:inst|mux2x5:mux_aw|o[2]                  ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |GECKO|CPU:inst|register_file:register_file_0|Mux39 ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |GECKO|CPU:inst|register_file:register_file_0|Mux28 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |GECKO|CPU:inst|PC:PC_0|addr[14]                          ;
+; 7:1                ; 24 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |GECKO|CPU:inst|IR:IR_0|Q[29]                             ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |GECKO|CPU:inst|IR:IR_0|Q[7]                              ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |GECKO|CPU:inst|IR:IR_0|Q[0]                              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |GECKO|CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[31]   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |GECKO|CPU:inst|mux2x5:mux_aw|o[3]                        ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |GECKO|CPU:inst|register_file:register_file_0|Mux58       ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |GECKO|CPU:inst|register_file:register_file_0|Mux23       ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |GECKO|CPU:inst|ALU:alu_0|multiplexer:multiplexer_0|Mux16 ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |GECKO|CPU:inst|ALU:alu_0|multiplexer:multiplexer_0|Mux25 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; No         ; |GECKO|CPU:inst|mux2x32:mux_data|o[23]                    ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |GECKO|CPU:inst|ALU:alu_0|multiplexer:multiplexer_0|Mux29 ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 28 LEs               ; 4 LEs                  ; No         ; |GECKO|CPU:inst|mux2x32:mux_data|o[27]                    ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |GECKO|CPU:inst|mux2x32:mux_data|o[29]                    ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |GECKO|CPU:inst|mux2x32:mux_data|o[31]                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -2005,7 +1912,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -2014,73 +1921,74 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Sun Oct 15 17:42:16 2017
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Tue Oct 17 14:52:40 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off GECKO -c GECKO
-Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 1 entities, in source file GECKO.bdf
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file gecko.bdf
     Info (12023): Found entity 1: GECKO
-Info (12021): Found 1 design units, including 1 entities, in source file ALU.bdf
+Info (12021): Found 1 design units, including 1 entities, in source file alu.bdf
     Info (12023): Found entity 1: ALU
-Info (12021): Found 1 design units, including 1 entities, in source file CPU.bdf
+Info (12021): Found 1 design units, including 1 entities, in source file cpu.bdf
     Info (12023): Found entity 1: CPU
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/add_sub.vhd
-    Info (12022): Found design unit 1: add_sub-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/add_sub.vhd Line: 17
-    Info (12023): Found entity 1: add_sub File: /home/guillaume/ArchOrd/Lab03/vhdl/add_sub.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/buttons.vhd
-    Info (12022): Found design unit 1: buttons-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/buttons.vhd Line: 22
-    Info (12023): Found entity 1: buttons File: /home/guillaume/ArchOrd/Lab03/vhdl/buttons.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/comparator.vhd
-    Info (12022): Found design unit 1: comparator-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/comparator.vhd Line: 16
-    Info (12023): Found entity 1: comparator File: /home/guillaume/ArchOrd/Lab03/vhdl/comparator.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/controller.vhd
-    Info (12022): Found design unit 1: controller-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/controller.vhd Line: 39
-    Info (12023): Found entity 1: controller File: /home/guillaume/ArchOrd/Lab03/vhdl/controller.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/decoder.vhd
-    Info (12022): Found design unit 1: decoder-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/decoder.vhd Line: 14
-    Info (12023): Found entity 1: decoder File: /home/guillaume/ArchOrd/Lab03/vhdl/decoder.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/extend.vhd
-    Info (12022): Found design unit 1: extend-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/extend.vhd Line: 12
-    Info (12023): Found entity 1: extend File: /home/guillaume/ArchOrd/Lab03/vhdl/extend.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd
-    Info (12022): Found design unit 1: IR-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 13
-    Info (12023): Found entity 1: IR File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/LEDs.vhd
-    Info (12022): Found design unit 1: LEDs-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/LEDs.vhd Line: 22
-    Info (12023): Found entity 1: LEDs File: /home/guillaume/ArchOrd/Lab03/vhdl/LEDs.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd
-    Info (12022): Found design unit 1: logic_unit-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 13
-    Info (12023): Found entity 1: logic_unit File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/multiplexer.vhd
-    Info (12022): Found design unit 1: multiplexer-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/multiplexer.vhd Line: 15
-    Info (12023): Found entity 1: multiplexer File: /home/guillaume/ArchOrd/Lab03/vhdl/multiplexer.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/mux2x5.vhd
-    Info (12022): Found design unit 1: mux2x5-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/mux2x5.vhd Line: 13
-    Info (12023): Found entity 1: mux2x5 File: /home/guillaume/ArchOrd/Lab03/vhdl/mux2x5.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/mux2x16.vhd
-    Info (12022): Found design unit 1: mux2x16-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/mux2x16.vhd Line: 13
-    Info (12023): Found entity 1: mux2x16 File: /home/guillaume/ArchOrd/Lab03/vhdl/mux2x16.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/mux2x32.vhd
-    Info (12022): Found design unit 1: mux2x32-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/mux2x32.vhd Line: 13
-    Info (12023): Found entity 1: mux2x32 File: /home/guillaume/ArchOrd/Lab03/vhdl/mux2x32.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/PC.vhd
-    Info (12022): Found design unit 1: PC-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/PC.vhd Line: 20
-    Info (12023): Found entity 1: PC File: /home/guillaume/ArchOrd/Lab03/vhdl/PC.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/RAM.vhd
-    Info (12022): Found design unit 1: RAM-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/RAM.vhd Line: 16
-    Info (12023): Found entity 1: RAM File: /home/guillaume/ArchOrd/Lab03/vhdl/RAM.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/register_file.vhd
-    Info (12022): Found design unit 1: register_file-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/register_file.vhd Line: 18
-    Info (12023): Found entity 1: register_file File: /home/guillaume/ArchOrd/Lab03/vhdl/register_file.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/ROM.vhd
-    Info (12022): Found design unit 1: ROM-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/ROM.vhd Line: 14
-    Info (12023): Found entity 1: ROM File: /home/guillaume/ArchOrd/Lab03/vhdl/ROM.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/ROM_Block.vhd
-    Info (12022): Found design unit 1: rom_block-SYN File: /home/guillaume/ArchOrd/Lab03/vhdl/ROM_Block.vhd Line: 52
-    Info (12023): Found entity 1: ROM_Block File: /home/guillaume/ArchOrd/Lab03/vhdl/ROM_Block.vhd Line: 42
-Info (12021): Found 2 design units, including 1 entities, in source file /home/guillaume/ArchOrd/Lab03/vhdl/shift_unit.vhd
-    Info (12022): Found design unit 1: shift_unit-synth File: /home/guillaume/ArchOrd/Lab03/vhdl/shift_unit.vhd Line: 14
-    Info (12023): Found entity 1: shift_unit File: /home/guillaume/ArchOrd/Lab03/vhdl/shift_unit.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/add_sub.vhd
+    Info (12022): Found design unit 1: add_sub-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/add_sub.vhd Line: 17
+    Info (12023): Found entity 1: add_sub File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/add_sub.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/buttons.vhd
+    Info (12022): Found design unit 1: buttons-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/buttons.vhd Line: 22
+    Info (12023): Found entity 1: buttons File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/buttons.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/comparator.vhd
+    Info (12022): Found design unit 1: comparator-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/comparator.vhd Line: 16
+    Info (12023): Found entity 1: comparator File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/comparator.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/controller.vhd
+    Info (12022): Found design unit 1: controller-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/controller.vhd Line: 39
+    Info (12023): Found entity 1: controller File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/controller.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/decoder.vhd
+    Info (12022): Found design unit 1: decoder-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/decoder.vhd Line: 14
+    Info (12023): Found entity 1: decoder File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/decoder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/extend.vhd
+    Info (12022): Found design unit 1: extend-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/extend.vhd Line: 12
+    Info (12023): Found entity 1: extend File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/extend.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/ir.vhd
+    Info (12022): Found design unit 1: IR-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 13
+    Info (12023): Found entity 1: IR File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/leds.vhd
+    Info (12022): Found design unit 1: LEDs-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/LEDs.vhd Line: 22
+    Info (12023): Found entity 1: LEDs File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/LEDs.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/logic_unit.vhd
+    Info (12022): Found design unit 1: logic_unit-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 13
+    Info (12023): Found entity 1: logic_unit File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/multiplexer.vhd
+    Info (12022): Found design unit 1: multiplexer-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/multiplexer.vhd Line: 15
+    Info (12023): Found entity 1: multiplexer File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/multiplexer.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/mux2x5.vhd
+    Info (12022): Found design unit 1: mux2x5-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/mux2x5.vhd Line: 13
+    Info (12023): Found entity 1: mux2x5 File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/mux2x5.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/mux2x16.vhd
+    Info (12022): Found design unit 1: mux2x16-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/mux2x16.vhd Line: 13
+    Info (12023): Found entity 1: mux2x16 File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/mux2x16.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/mux2x32.vhd
+    Info (12022): Found design unit 1: mux2x32-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/mux2x32.vhd Line: 13
+    Info (12023): Found entity 1: mux2x32 File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/mux2x32.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/pc.vhd
+    Info (12022): Found design unit 1: PC-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/PC.vhd Line: 20
+    Info (12023): Found entity 1: PC File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/PC.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/ram.vhd
+    Info (12022): Found design unit 1: RAM-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/RAM.vhd Line: 16
+    Info (12023): Found entity 1: RAM File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/RAM.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/register_file.vhd
+    Info (12022): Found design unit 1: register_file-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/register_file.vhd Line: 18
+    Info (12023): Found entity 1: register_file File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/register_file.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/rom.vhd
+    Info (12022): Found design unit 1: ROM-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/ROM.vhd Line: 14
+    Info (12023): Found entity 1: ROM File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/ROM.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/rom_block.vhd
+    Info (12022): Found design unit 1: rom_block-SYN File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/ROM_Block.vhd Line: 52
+    Info (12023): Found entity 1: ROM_Block File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/ROM_Block.vhd Line: 42
+Info (12021): Found 2 design units, including 1 entities, in source file /users/florian/desktop/epfl/archord/lab03/vhdl/shift_unit.vhd
+    Info (12022): Found design unit 1: shift_unit-synth File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/shift_unit.vhd Line: 14
+    Info (12023): Found entity 1: shift_unit File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/shift_unit.vhd Line: 5
 Info (12127): Elaborating entity "GECKO" for the top level hierarchy
 Info (12128): Elaborating entity "LEDs" for hierarchy "LEDs:LEDs_0"
 Info (12128): Elaborating entity "decoder" for hierarchy "decoder:decoder_0"
@@ -2094,50 +2002,49 @@ Info (12128): Elaborating entity "multiplexer" for hierarchy "CPU:inst|ALU:alu_0
 Info (12128): Elaborating entity "add_sub" for hierarchy "CPU:inst|ALU:alu_0|add_sub:add_sub_0"
 Info (12128): Elaborating entity "comparator" for hierarchy "CPU:inst|ALU:alu_0|comparator:comparator_0"
 Info (12128): Elaborating entity "logic_unit" for hierarchy "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0"
-Warning (10631): VHDL Process Statement warning at logic_unit.vhd(16): inferring latch(es) for signal or variable "r", which holds its previous value in one or more paths through the process File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[0]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[1]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[2]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[3]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[4]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[5]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[6]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[7]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[8]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[9]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[10]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[11]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[12]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[13]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[14]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[15]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[16]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[17]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[18]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[19]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[20]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[21]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[22]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[23]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[24]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[25]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[26]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[27]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[28]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[29]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[30]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
-Info (10041): Inferred latch for "r[31]" at logic_unit.vhd(16) File: /home/guillaume/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (10631): VHDL Process Statement warning at logic_unit.vhd(16): inferring latch(es) for signal or variable "r", which holds its previous value in one or more paths through the process File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[0]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[1]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[2]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[3]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[4]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[5]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[6]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[7]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[8]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[9]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[10]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[11]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[12]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[13]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[14]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[15]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[16]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[17]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[18]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[19]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[20]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[21]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[22]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[23]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[24]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[25]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[26]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[27]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[28]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[29]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[30]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Info (10041): Inferred latch for "r[31]" at logic_unit.vhd(16) File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
 Info (12128): Elaborating entity "shift_unit" for hierarchy "CPU:inst|ALU:alu_0|shift_unit:shift_unit_0"
 Info (12128): Elaborating entity "register_file" for hierarchy "CPU:inst|register_file:register_file_0"
 Info (12128): Elaborating entity "mux2x5" for hierarchy "CPU:inst|mux2x5:mux_aw"
 Info (12128): Elaborating entity "mux2x32" for hierarchy "CPU:inst|mux2x32:mux_data"
 Info (12128): Elaborating entity "extend" for hierarchy "CPU:inst|extend:extend_0"
-Warning (10492): VHDL Process Statement warning at extend.vhd(18): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/guillaume/ArchOrd/Lab03/vhdl/extend.vhd Line: 18
 Info (12128): Elaborating entity "ROM" for hierarchy "ROM:ROM_0"
-Info (12128): Elaborating entity "ROM_Block" for hierarchy "ROM:ROM_0|ROM_Block:rom_block_0" File: /home/guillaume/ArchOrd/Lab03/vhdl/ROM.vhd Line: 27
-Info (12128): Elaborating entity "altsyncram" for hierarchy "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component" File: /home/guillaume/ArchOrd/Lab03/vhdl/ROM_Block.vhd Line: 85
-Info (12130): Elaborated megafunction instantiation "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component" File: /home/guillaume/ArchOrd/Lab03/vhdl/ROM_Block.vhd Line: 85
-Info (12133): Instantiated megafunction "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component" with the following parameter: File: /home/guillaume/ArchOrd/Lab03/vhdl/ROM_Block.vhd Line: 85
+Info (12128): Elaborating entity "ROM_Block" for hierarchy "ROM:ROM_0|ROM_Block:rom_block_0" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/ROM.vhd Line: 27
+Info (12128): Elaborating entity "altsyncram" for hierarchy "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/ROM_Block.vhd Line: 85
+Info (12130): Elaborated megafunction instantiation "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/ROM_Block.vhd Line: 85
+Info (12133): Instantiated megafunction "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/ROM_Block.vhd Line: 85
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
@@ -2153,43 +2060,75 @@ Info (12133): Instantiated megafunction "ROM:ROM_0|ROM_Block:rom_block_0|altsync
     Info (12134): Parameter "width_a" = "32"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_rna1.tdf
-    Info (12023): Found entity 1: altsyncram_rna1 File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_rna1" for hierarchy "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated" File: /opt/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+    Info (12023): Found entity 1: altsyncram_rna1 File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_rna1" for hierarchy "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "RAM" for hierarchy "RAM:RAM_0"
 Info (12128): Elaborating entity "buttons" for hierarchy "buttons:buttons_0"
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13048): Converted tri-state node "rddata[31]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[30]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[29]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[28]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[27]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[26]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[25]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[24]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[23]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[22]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[21]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[20]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[19]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[18]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[17]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[16]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[15]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[14]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[13]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[12]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[11]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[10]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[9]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[8]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[7]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[6]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[5]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[4]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[3]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[2]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[1]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
-    Warning (13048): Converted tri-state node "rddata[0]" into a selector File: /home/guillaume/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[31]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[30]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[29]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[28]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[27]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[26]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[25]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[24]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[23]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[22]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[21]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[20]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[19]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[18]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[17]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[16]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[15]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[14]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[13]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[12]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[11]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[10]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[9]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[8]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[7]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[6]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[5]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[4]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[3]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[2]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[1]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+    Warning (13048): Converted tri-state node "rddata[0]" into a selector File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/IR.vhd Line: 17
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[0]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[1]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[2]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[3]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[4]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[5]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[6]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[7]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[8]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[9]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[10]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[11]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[12]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[13]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[14]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[15]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[31]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[30]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[29]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[28]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[27]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[26]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[25]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[24]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[23]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[22]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[21]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[20]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[19]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[18]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[17]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:inst|ALU:alu_0|logic_unit:logic_unit_0|r[16]" is permanently enabled File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/vhdl/logic_unit.vhd Line: 16
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "RAM:RAM_0|memory_array_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
@@ -2213,73 +2152,73 @@ Info (12133): Instantiated megafunction "RAM:RAM_0|altsyncram:memory_array_rtl_0
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_3t31.tdf
-    Info (12023): Found entity 1: altsyncram_3t31 File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_3t31 File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 28
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[25]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 560
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[24]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 539
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[23]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 518
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[22]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 497
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[26]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 581
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[30]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 665
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[29]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 644
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[28]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 623
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[27]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 602
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[31]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 686
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[6]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 161
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[4]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 119
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[5]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 140
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[0]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 35
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[1]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 56
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[2]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 77
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[3]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 98
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[7]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 182
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[8]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 203
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[9]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 224
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[10]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 245
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[11]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 266
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[12]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 287
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[13]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 308
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[14]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 329
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[15]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 350
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[16]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 371
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[17]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 392
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[18]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 413
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[19]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 434
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[20]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 455
-        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[21]" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 476
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a0" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 36
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a1" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 57
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a2" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 78
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a3" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 99
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a4" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 120
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a5" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 141
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a6" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 162
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a7" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 183
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a8" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 204
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a9" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 225
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a10" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 246
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a11" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 267
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a12" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 288
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a13" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 309
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a14" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 330
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a15" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 351
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a16" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 372
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a17" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 393
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a18" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 414
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a19" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 435
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a20" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 456
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a21" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 477
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a22" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 498
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a23" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 519
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a24" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 540
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a25" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 561
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a26" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 582
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a27" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 603
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a28" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 624
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a29" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 645
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a30" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 666
-        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a31" File: /home/guillaume/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 687
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[25]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 560
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[24]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 539
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[23]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 518
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[22]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 497
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[26]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 581
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[6]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 161
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[28]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 623
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[27]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 602
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[30]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 665
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[31]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 686
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[29]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 644
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[4]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 119
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[15]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 350
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[0]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 35
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[1]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 56
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[2]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 77
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[3]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 98
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[14]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 329
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[5]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 140
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[12]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 287
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[11]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 266
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[13]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 308
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[21]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 476
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[16]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 371
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[7]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 182
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[8]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 203
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[9]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 224
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[10]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 245
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[17]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 392
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[18]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 413
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[19]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 434
+        Warning (14320): Synthesized away node "ROM:ROM_0|ROM_Block:rom_block_0|altsyncram:altsyncram_component|altsyncram_rna1:auto_generated|q_a[20]" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_rna1.tdf Line: 455
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a0" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 36
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a1" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 57
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a2" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 78
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a3" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 99
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a4" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 120
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a5" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 141
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a6" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 162
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a7" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 183
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a8" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 204
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a9" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 225
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a10" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 246
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a11" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 267
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a12" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 288
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a13" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 309
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a14" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 330
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a15" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 351
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a16" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 372
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a17" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 393
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a18" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 414
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a19" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 435
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a20" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 456
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a21" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 477
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a22" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 498
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a23" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 519
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a24" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 540
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a25" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 561
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a26" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 582
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a27" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 603
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a28" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 624
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a29" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 645
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a30" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 666
+        Warning (14320): Synthesized away node "RAM:RAM_0|altsyncram:memory_array_rtl_0|altsyncram_3t31:auto_generated|ram_block1a31" File: C:/Users/Florian/Desktop/EPFL/ArchOrd/Lab03/quartus/db/altsyncram_3t31.tdf Line: 687
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "row1[11]" is stuck at GND
     Warning (13410): Pin "row1[10]" is stuck at GND
@@ -2390,10 +2329,10 @@ Warning (21074): Design contains 6 input pin(s) that do not drive logic
 Info (21057): Implemented 102 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 96 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 206 warnings
-    Info: Peak virtual memory: 1288 megabytes
-    Info: Processing ended: Sun Oct 15 17:42:30 2017
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:33
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 237 warnings
+    Info: Peak virtual memory: 704 megabytes
+    Info: Processing ended: Tue Oct 17 14:52:56 2017
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:30
 
 

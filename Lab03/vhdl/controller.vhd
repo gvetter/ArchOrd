@@ -73,7 +73,7 @@ begin
 		sel_rC <= '0';
 		read <= '0';
 		write <= '0';
-		op_alu <= (5 downto 0 => '0');
+		--op_alu <= (5 downto 0 => '0');
 		
 		case state is
 		
@@ -235,8 +235,9 @@ begin
 	
 	process(op, opx) --ALU
 	begin
+	op_alu <= (5 downto 0 => '0'); --initialisation
 		
-		if op(2 downto 0) = "010" then --correspond to 111010, so 010 wich is R type
+		if (op(2 downto 0) = "010") then --correspond to 111010, so 010 wich is R type
 			 
 			 op_alu(2 downto 0) <= opx(5 downto 3);
 			 
@@ -263,7 +264,7 @@ begin
 			
 			else --not R-Type so I-Type
 			
-			op_alu(2 downto 0) <=(5 downto 3);
+			op_alu(2 downto 0) <= op(5 downto 3);
 			
 			case op(2 downto 0) is
 			
@@ -274,8 +275,8 @@ begin
 					else --logic unit
 						op_alu(5 downto 3) <= "100";
 					end if;
-				when "000" | "110" --comparator / branch
-					op_alu(5 downto 3) <= "011" 
+				when "000" | "110" => --comparator / branch
+					op_alu(5 downto 3) <= "011"; 
 				
 				when others =>
 					op_alu(5 downto 3) <= "000"; --default case set at "000"
