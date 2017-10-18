@@ -46,7 +46,7 @@ begin
 	process(clk, next_state, reset_n) 
 	begin
 	
-		if(reset_n = '1' ) then
+		if(reset_n = '0' ) then
 			state <= FETCH1;
 		elsif(rising_edge(clk)) then
 			state <= next_state;
@@ -90,11 +90,11 @@ begin
 				
 			when DECODE => --identify instruction to select next_state--
 			
-				case op & "00" is
+				case "00" & op is
 				
 					when X"3A" => -- that'opcode for R-type--
 					
-						case opx & "00" is
+						case "00" & opx is
 							-- R_OP (add, sub, cmpge, cmplt, nor, and, or, xor, sll, srl, sra, cmpne, cmpeq, cmpgeu, cmpltu, rol, ror)--
 							when X"31" | X"39" | X"08" | X"10" | X"06" | X"0E" | X"16" | X"1E" | X"13" | X"1B" | X"3B" | X"18" | X"20" | X"28" | X"30" | X"03" | X"0B" =>
 								next_state <= R_OP;
