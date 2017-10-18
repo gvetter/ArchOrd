@@ -22,7 +22,7 @@ begin
 process(clk, reset_n, en, a)
 begin
 
-	if (reset_n = '1') then
+	if (reset_n = '0') then
 			addr <= (31 downto 0 => '0');
 			
 	elsif (rising_edge(clk)) then
