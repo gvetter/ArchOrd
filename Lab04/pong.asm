@@ -253,6 +253,28 @@ hit_test_y:
 
 ; BEGIN:display_score
 display_score:
+	.word 0x7E427E00 ; 0
+	.word 0x407E4400 ; 1
+	.word 0x4E4A7A00 ; 2
+	.word 0x7E4A4200 ; 3
+	.word 0x7E080E00 ; 4
+	.word 0x7A4A4E00 ; 5
+	.word 0x7A4A7E00 ; 6
+	.word 0x7E020600 ; 7
+	.word 0x7E4A7E00 ; 8
+	.word 0x7E4A4E00 ; 9
+	.word 0x7E127E00 ; A
+	.word 0x344A7E00 ; B
+	.word 0x42423C00 ; C
+	.word 0x3C427E00 ; D
+	.word 0x424A7E00 ; E
+	.word 0x020A7E00 ; F
+	.word 0x00181800 ; separator
+	
+	ldw 0x00181800, LEDS+4(zero) ; separator
+	ldw t5, LEDS(zero) ;score player one
+	ldw t6, LEDS+8(zero) ;score player two
+
 ; your implementation code
 ret
 ; END:display_score
