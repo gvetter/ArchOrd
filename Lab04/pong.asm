@@ -90,9 +90,72 @@ ret
 
 ; BEGIN:hit_test
 hit_test:
-; your implementation code
+	; 'This test can be done independently for each ball position' So we will do a x test and a y test
+	
+	call hit_test_x
+	call hit_test_y
+	
+	
 ret
 ; END:hit_test
+
+; BEGIN:hit_test_x
+hit_test_x:
+    addi sp, sp, -16
+    stw t0, 0(sp)
+    stw t1, 4(sp)
+    stw t2, 8(sp)
+    stw t3, 12(sp)
+    
+    ldw t0, BALL(zero) ;t0 = pos
+    ldw t1, BALL+8(zero);t1 = vel
+    cmpeqi t2, t0, 1
+    cmpeqi t3, t0, 10
+    or t2, t2, t3
+    beq t2, zero, skip
+    
+    sub t1, zero, t1
+    stw t1, BALL+8(zero)
+    
+    skip:
+    
+	ldw t0, 0(sp)
+    ldw t1, 4(sp)
+    ldw t2, 8(sp)
+    ldw t3, 12(sp)
+	addi sp, sp, 16
+ret
+; END:hit_test_x
+
+; BEGIN:hit_test_y
+hit_test_y:
+    addi sp, sp, -16
+    stw t0, 0(sp)
+    stw t1, 4(sp)
+    stw t2, 8(sp)
+    stw t3, 12(sp)
+    
+    ldw t0, BALL+4(zero) ;t0 = pos
+    ldw t1, BALL+12(zero);t1 = vel
+    cmpeqi t2, t0, 0
+    cmpeqi t3, t0, 7
+    or t2, t2, t3
+    beq t2, zero, skip
+    
+    sub t1, zero, t1
+    stw t1, BALL+12(zero)
+    
+    skip:
+    
+	ldw t0, 0(sp)
+    ldw t1, 4(sp)
+    ldw t2, 8(sp)
+    ldw t3, 12(sp)
+	addi sp, sp, 16
+	
+ret
+; END:hit_test_y
+
 
 ; BEGIN:display_score
 display_score:
