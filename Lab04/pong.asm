@@ -4,21 +4,31 @@
 .equ LEDS, 0x2000 ; LED addresses
 .equ BUTTONS, 0x2030 ; Button addresses
 
-call clear_leds
-call wait
-call wait
-addi a1, zero, 3
-addi a0, zero, 2
- 
-call set_pixel
-call wait
-call wait
+main:
+
+	call clear_leds
+	call wait
+	call wait
+	addi a1, zero, 3
+	addi a0, zero, 2
+	 
+	call set_pixel
+	call wait
+	call wait
+	
+	
 ; BEGIN:wait
 wait:
-	addi t0, zero, 32
-	addi t1, zero, 1
-	jmp: sub t0, t0, t1
+	addi sp, sp, -4
+	stw t0, sp(0)
+	
+	addi t0, zero, 1
+	slli t0, 10
+	jmp: addi t0, t0, -1
 	bne t0, zero, jmp
+	
+	ldw t0, sp(0)
+	addi sp, sp, 4
 	ret
 
 ;END:wait
@@ -35,12 +45,28 @@ clear_leds:
 
 ; BEGIN:set_pixel
 set_pixel:
-	add t0, zero, zero
-	slli t0, a0, 8	
-	add t0, a1, t0
-	ldw t1, LEDS(t0)
-	ori t1, t1, 1
-	stw t1, LEDS(t0)
+	addi sp, sp, -12
+	stw t0, 0(sp)
+	stw t1, 4(sp)
+	stw t2, 8(sp)
+	
+	andi t0, a0, 3 ;x modulo 4
+	andi t1, a1, 7 ;y modulo 8
+	slli t0, t0, 8 ; pas de mult en nios2
+	add	t2, t1, t0
+	addi t0, zero, 1
+	sll t0, t0, t2
+	
+	andi t1, a0, 0x0C
+	ldw t2, LEDS(t1)
+	or	t2, t2, t0 
+	stw t2, LEDS(t1)
+	
+	ldw t0, 0(sp)
+	ldw t1, 4(sp)
+	ldw t2, 8(sp)
+	addi sp, sp, 12
+
 	ret
 ; END:set_pixel
 
