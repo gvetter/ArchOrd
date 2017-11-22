@@ -4,33 +4,63 @@
 .equ LEDS, 0x2000 ; LED addresses
 .equ BUTTONS, 0x2030 ; Button addresses
 
-main:
+addi sp, zero, LEDS
 
-	call clear_leds
-	call wait
-	call wait
-	addi a1, zero, 3
-	addi a0, zero, 2
-	 
-	call set_pixel
-	call wait
-	call wait
+call main
+
+break
+
+main:
+	addi sp, sp, -20
+	stw a0, 0(sp)
+	stw a1, 4(sp)
+	stw t0, 12(sp)
+	stw t1, 16(sp)
+	stw ra, 8(sp)
 	
+	call clear_leds
+	
+	addi t0, zero, 3
+	addi t1, zero, 4
+	
+	stw t0, PADDLES(zero)
+	stw	t1, PADDLES+4(zero)
+	stw t0, SCORES(zero)
+	addi t1, t1, 4
+	stw t1, SCORES+4(zero)
+	 
+	call draw_paddles
+	call move_paddles
+	call wait
+	call clear_leds
+	call draw_paddles
+	call display_score
+	
+	ldw a0, 0(sp)
+	ldw a1, 4(sp)
+	ldw ra, 8(sp)
+	ldw t0, 12(sp)
+	ldw t1, 16(sp)
+	addi sp, sp, 20
+	ret
 	
 ; BEGIN:wait
 wait:
 	addi sp, sp, -4
-	stw t0, sp(0)
+	stw t0, 0(sp)
 	
 	addi t0, zero, 1
-	slli t0, 10
-	loop_wait:
-	addi t0, t0, -1
-	bne t0, zero, loop_wait
-	
-	ldw t0, sp(0)
-	addi sp, sp, 4
-	ret
+	slli t0, t0, 5
+
+    loop_wait:
+        beq  t0, zero, ret_wait
+        addi t0, t0, -1
+        br   loop_wait
+        
+	ret_wait:
+		ldw t0, 0(sp)
+		addi sp, sp, 4
+		ret
 
 ;END:wait
 
@@ -53,10 +83,10 @@ set_pixel:
 	
 	andi t0, a0, 3 ;x modulo 4
 	andi t1, a1, 7 ;y modulo 8
-	slli t0, t0, 8 ; pas de mult en nios2
-	add	t2, t1, t0
+	slli t0, t0, 3 ; pas de mult en nios2
+	add  t2, t1, t0
 	addi t0, zero, 1
-	sll t0, t0, t2
+	sll  t0, t0, t2
 	
 	andi t1, a0, 0x0C
 	ldw t2, LEDS(t1)
@@ -79,12 +109,12 @@ move_ball:
     
     ldw t0, BALL(zero)
     ldw t1, BALL+8(zero)
-    addi t0, t0, t1
+    add t0, t0, t1
     stw t0, BALL(zero)
     
     ldw t0, BALL+4(zero)
     ldw t1, BALL+12(zero)
-    addi t0, t0, t1
+    add t0, t0, t1
     stw t0, BALL+4(zero)
     
     stw t0, 0(sp)
@@ -177,9 +207,9 @@ draw_paddles:
 	addi a1, a1, 2
 	call set_pixel
 	
-	stw a0, 0(sp)
-	stw a1, 4(sp)
-	stw ra, 8(sp)
+	ldw a0, 0(sp)
+	ldw a1, 4(sp)
+	ldw ra, 8(sp)
 	addi sp, sp, 12
 	ret
 ; END:draw_paddles
@@ -253,6 +283,32 @@ hit_test_y:
 
 ; BEGIN:display_score
 display_score:
+	addi sp, sp, -8
+	stw t0, 0(sp)
+	stw ra, 4(sp)
+	
+	ldw t0, SCORES(zero)
+	slli t0, t0, 2
+	ldw t0, font_data(t0)
+	stw t0, LEDS(zero)
+	
+	ldw t0, SCORES+4(zero)
+	slli t0, t0, 2
+	ldw t0, font_data(t0)
+	stw t0, LEDS+8(zero)
+	
+	addi t0, zero, 16
+	slli t0, t0, 2
+	ldw t0, font_data(t0)
+	stw t0, LEDS+4(zero)
+	
+	ldw t0, 0(sp)
+	ldw ra, 4(sp)
+	addi sp, sp, 8
+ret
+; END:display_score
+
+font_data:
 	.word 0x7E427E00 ; 0
 	.word 0x407E4400 ; 1
 	.word 0x4E4A7A00 ; 2
@@ -270,12 +326,4 @@ display_score:
 	.word 0x424A7E00 ; E
 	.word 0x020A7E00 ; F
 	.word 0x00181800 ; separator
-	
-	ldw 0x00181800, LEDS+4(zero) ; separator
-	ldw t5, LEDS(zero) ;score player one
-	ldw t6, LEDS+8(zero) ;score player two
-
-; your implementation code
-ret
-; END:display_score
 
