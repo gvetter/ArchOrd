@@ -308,98 +308,11 @@ who_won:
 
 	check_player_ret:
 		ldw t0, 0(sp)
-		ldw ra, 4(sp)
-		addi sp, sp, 8
-		ret
+		
 
-check_player1_win:
-
-	addi    sp, sp, -32
-    stw     t0, 0(sp)
-    stw     t1, 4(sp)
-    stw     t2, 8(sp)
-    stw     t3, 12(sp)
-    stw     t4, 16(sp)
-    stw     t5, 20(sp)
-    stw     t6, 24(sp)
-    stw     t7, 28(sp)
-
-	ldw t0, BALL(zero)
-	ldw t1, BALL+4(zero)
-	ldw t2, PADDLES+4(zero)
-	addi t3, t2, 3
-	cmpeqi  t4, t0, 10                         
-    cmplt   t5, t1, t2                         
-    cmpge   t6, t1, t3                         
-    or      t7, t5, t6                         
-    and     t7, t4, t7                     ;mettre une valeur t8?    
-    bne     t7, zero, player1_win_true
-    br      player1_win_false
-
-	player1_win_true:
-		addi v0, zero, 1
-		br check_player1_win_ret
-
-	player1_win_false:
-		addi v0, zero, 0
-		br check_player1_win_ret
-
-	check_player1_win_ret:
-
-		ldw     t0, 0(sp)
-        ldw     t1, 4(sp)
-        ldw     t2, 8(sp)
-        ldw     t3, 12(sp)
-        ldw     t4, 16(sp)
-        ldw     t5, 20(sp)
-        ldw     t6, 24(sp)
-        ldw     t7, 28(sp)
-        addi    sp, sp, 32
-		ret
 	
-check_player2_win:
 
-	addi    sp, sp, -32
-    stw     t0, 0(sp)
-    stw     t1, 4(sp)
-    stw     t2, 8(sp)
-    stw     t3, 12(sp)
-    stw     t4, 16(sp)
-    stw     t5, 20(sp)
-    stw     t6, 24(sp)
-    stw     t7, 28(sp)
-	
-	ldw t0, BALL(zero)
-	ldw t1, BALL+4(zero)
-	ldw t2, PADDLES(zero)
-	addi t3, t2, 3
-	cmpeqi t4, t0, 1
-	cmplt t5, t1, t2
-	cmpge t6, t1, t3
-	or t7, t5, t6
-	and t7, t4, t7
-	bne t7, zero, player2_win_true
-	br player2_win_false
 
-	player2_win_true:
-		addi v0, zero, 1
-		br check_player2_win_ret
-
-	player2_win_false:
-		addi v0, zero, 0
-		br check_player2_win_ret
-
-	check_player2_win_ret:
-		ldw     t0, 0(sp)
-        ldw     t1, 4(sp)
-        ldw     t2, 8(sp)
-        ldw     t3, 12(sp)
-        ldw     t4, 16(sp)
-        ldw     t5, 20(sp)
-        ldw     t6, 24(sp)
-        ldw     t7, 28(sp)
-        addi    sp, sp, 32
-        ret
 
 ; BEGIN:display_score
 display_score:

@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for GECKO
-Wed Nov 08 14:17:24 2017
+Wed Nov 22 10:31:27 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -96,14 +96,14 @@ agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.29        ;
+; Average used               ; 1.26        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  15.5%      ;
-;     Processor 3            ;   7.1%      ;
-;     Processor 4            ;   6.3%      ;
+;     Processor 2            ;  13.6%      ;
+;     Processor 3            ;   6.6%      ;
+;     Processor 4            ;   5.8%      ;
 +----------------------------+-------------+
 
 
@@ -112,7 +112,7 @@ agreement for further details.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; GECKO.sdc     ; OK     ; Wed Nov 08 14:17:20 2017 ;
+; GECKO.sdc     ; OK     ; Wed Nov 22 10:31:23 2017 ;
 +---------------+--------+--------------------------+
 
 
@@ -475,8 +475,8 @@ No paths to report.
 ; 2.251 ; CPU:inst|IR:IR_0|Q[24] ; LEDs:LEDs_0|LEDs_reg[84]                                 ; clk          ; clk         ; 20.000       ; 0.352      ; 18.103     ;
 ; 2.251 ; CPU:inst|IR:IR_0|Q[24] ; LEDs:LEDs_0|LEDs_reg[90]                                 ; clk          ; clk         ; 20.000       ; 0.352      ; 18.103     ;
 ; 2.253 ; CPU:inst|IR:IR_0|Q[28] ; LEDs:LEDs_0|LEDs_reg[85]                                 ; clk          ; clk         ; 20.000       ; 0.360      ; 18.109     ;
-; 2.254 ; CPU:inst|IR:IR_0|Q[27] ; LEDs:LEDs_0|LEDs_reg[85]                                 ; clk          ; clk         ; 20.000       ; 0.360      ; 18.108     ;
 ; 2.254 ; CPU:inst|IR:IR_0|Q[29] ; CPU:inst|register_file:register_file_0|reg_array[12][27] ; clk          ; clk         ; 20.000       ; -0.097     ; 17.651     ;
+; 2.254 ; CPU:inst|IR:IR_0|Q[27] ; LEDs:LEDs_0|LEDs_reg[85]                                 ; clk          ; clk         ; 20.000       ; 0.360      ; 18.108     ;
 ; 2.260 ; CPU:inst|IR:IR_0|Q[28] ; LEDs:LEDs_0|LEDs_reg[75]                                 ; clk          ; clk         ; 20.000       ; 0.372      ; 18.114     ;
 ; 2.261 ; CPU:inst|IR:IR_0|Q[27] ; LEDs:LEDs_0|LEDs_reg[75]                                 ; clk          ; clk         ; 20.000       ; 0.372      ; 18.113     ;
 ; 2.267 ; CPU:inst|IR:IR_0|Q[30] ; LEDs:LEDs_0|LEDs_reg[76]                                 ; clk          ; clk         ; 20.000       ; 0.362      ; 18.097     ;
@@ -539,10 +539,10 @@ No paths to report.
 ; 2.437 ; CPU:inst|IR:IR_0|Q[29] ; LEDs:LEDs_0|LEDs_reg[71]                                 ; clk          ; clk         ; 20.000       ; 0.357      ; 17.922     ;
 ; 2.437 ; CPU:inst|IR:IR_0|Q[29] ; LEDs:LEDs_0|LEDs_reg[69]                                 ; clk          ; clk         ; 20.000       ; 0.357      ; 17.922     ;
 ; 2.443 ; CPU:inst|IR:IR_0|Q[28] ; LEDs:LEDs_0|LEDs_reg[94]                                 ; clk          ; clk         ; 20.000       ; 0.378      ; 17.937     ;
-; 2.444 ; CPU:inst|IR:IR_0|Q[28] ; LEDs:LEDs_0|LEDs_reg[80]                                 ; clk          ; clk         ; 20.000       ; 0.382      ; 17.940     ;
-; 2.444 ; CPU:inst|IR:IR_0|Q[28] ; LEDs:LEDs_0|LEDs_reg[92]                                 ; clk          ; clk         ; 20.000       ; 0.382      ; 17.940     ;
 ; 2.444 ; CPU:inst|IR:IR_0|Q[29] ; LEDs:LEDs_0|LEDs_reg[80]                                 ; clk          ; clk         ; 20.000       ; 0.359      ; 17.917     ;
 ; 2.444 ; CPU:inst|IR:IR_0|Q[29] ; LEDs:LEDs_0|LEDs_reg[92]                                 ; clk          ; clk         ; 20.000       ; 0.359      ; 17.917     ;
+; 2.444 ; CPU:inst|IR:IR_0|Q[28] ; LEDs:LEDs_0|LEDs_reg[80]                                 ; clk          ; clk         ; 20.000       ; 0.382      ; 17.940     ;
+; 2.444 ; CPU:inst|IR:IR_0|Q[28] ; LEDs:LEDs_0|LEDs_reg[92]                                 ; clk          ; clk         ; 20.000       ; 0.382      ; 17.940     ;
 ; 2.446 ; CPU:inst|IR:IR_0|Q[29] ; LEDs:LEDs_0|LEDs_reg[94]                                 ; clk          ; clk         ; 20.000       ; 0.355      ; 17.911     ;
 ; 2.448 ; CPU:inst|IR:IR_0|Q[29] ; LEDs:LEDs_0|LEDs_reg[68]                                 ; clk          ; clk         ; 20.000       ; 0.334      ; 17.888     ;
 ; 2.452 ; CPU:inst|IR:IR_0|Q[28] ; LEDs:LEDs_0|LEDs_reg[74]                                 ; clk          ; clk         ; 20.000       ; 0.380      ; 17.930     ;
@@ -1444,7 +1444,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Nov 08 14:17:19 2017
+    Info: Processing started: Wed Nov 22 10:31:20 2017
 Info: Command: quartus_sta GECKO -c GECKO
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1507,9 +1507,9 @@ Info (332146): Worst-case minimum pulse width slack is 9.206
 Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 704 megabytes
-    Info: Processing ended: Wed Nov 08 14:17:24 2017
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 702 megabytes
+    Info: Processing ended: Wed Nov 22 10:31:27 2017
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:05
 
 
