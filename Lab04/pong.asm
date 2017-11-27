@@ -62,7 +62,7 @@ main:
 		ldw  a0, BALL(zero)    
     	ldw  a1, BALL+4(zero)
    		call set_pixel 
-		call wait
+		;call wait
 		
 		br loop
 
@@ -156,11 +156,11 @@ wait:
 	slli t0, t0, 5
 
     loop_wait:
-        beq  t0, zero, ret_wait
+        beq  t0, zero, wait_return
         addi t0, t0, -1
         br   loop_wait
         
-	ret_wait:
+	wait_return:
 		ldw t0, 0(sp)
 		addi sp, sp, 4
 		ret
