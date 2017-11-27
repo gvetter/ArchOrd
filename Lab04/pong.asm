@@ -5,20 +5,49 @@
 .equ BUTTONS, 0x2030 ; Button addresses
 
 addi sp, zero, LEDS
+; initialisation
+addi sp, sp, -8
+stw t0, 0(sp)
+stw ra, 4(sp)
+
+;Ball
+ldw t0, BALL_initial(zero) ;x pos
+stw t0, BALL(zero)
+		
+ldw t0, BALL_initial+8(zero) ;y pos
+stw t0, BALL+4(zero)
+
+ldw t0, BALL_initial+4(zero) ;x velo
+stw t0, BALL+8(zero)
+
+ldw t0, BALL_initial+12(zero) ; y velo
+stw t0, BALL+12(zero)
+
+; Paddles
+ldw t0, PADDLE_initial(zero)
+stw t0, PADDLES(zero)
+
+ldw t0, PADDLE_initial+4(zero)
+stw t0, PADDLES+4(zero)
+
+; score
+stw  zero, SCORES(zero)
+stw  zero, SCORES+4(zero)
 
 call main
 
 break
 
 main:
-	addi sp, sp, -28
+	addi sp, sp, -24
 	stw ra, 0(sp)
 	stw t0, 4(sp)
 	stw t1, 8(sp)
-	stw t2, 12(sp)
-	stw t3, 16(sp)
-	stw a0, 20(sp)
-	stw a1, 24(sp)
+	stw t2, 12(sp)	
+	stw a0, 16(sp)
+	stw a1, 20(sp)
+
+	;call main_reinitialize
 
 	call loop
 	
@@ -33,6 +62,9 @@ main:
 		ldw  a0, BALL(zero)    
     	ldw  a1, BALL+4(zero)
    		call set_pixel 
+		call wait
+		
+		br loop
 
 	
 	loop_player_won:
@@ -62,10 +94,10 @@ main:
 		ldw t2, points_for_game(zero)
 		cmpeq t0, t0, t2
 		cmpeq t1, t1, t2
-		or t3, t0, t1
-		bne t3, zero, main_return
+		or t2, t0, t1
+		bne t2, zero, main_return
 		call main_reinitialize
-		call wait
+		;call wait
 		call wait
 		br loop
 
@@ -82,19 +114,19 @@ main:
 
 		ldw t0, PADDLE_initial+4(zero)
 		stw t0, PADDLES+4(zero)
+
 		
-		call wait
+		;call wait
 		
 
 	main_return:
 		stw ra, 0(sp)
 		stw t0, 4(sp)
 		stw t1, 8(sp)
-		stw t2, 12(sp)
-		stw t3, 16(sp)
-		stw a0, 20(sp)
-		stw a1, 24(sp)
-		addi sp, sp, 28
+		stw t2, 12(sp)	
+		stw a0, 16(sp)
+		stw a1, 20(sp)
+		addi sp, sp, 24
 		ret
 
 	
@@ -155,7 +187,7 @@ set_pixel:
 	andi t0, a0, 3 ;x modulo 4
 	andi t1, a1, 7 ;y modulo 8
 	slli t0, t0, 3 ; pas de mult en nios2
-	add  t2, t1, t0
+	add  t2, t0, t1
 	addi t0, zero, 1
 	sll  t0, t0, t2
 	
