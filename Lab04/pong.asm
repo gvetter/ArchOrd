@@ -11,38 +11,109 @@ call main
 break
 
 main:
-	addi sp, sp, -20
-	stw a0, 0(sp)
-	stw a1, 4(sp)
-	stw t0, 12(sp)
-	stw t1, 16(sp)
-	stw ra, 8(sp)
+	addi sp, sp, -28
+	stw ra, 0(sp)
+	stw t0, 4(sp)
+	stw t1, 8(sp)
+	stw t2, 12(sp)
+	stw t3, 16(sp)
+	stw a0, 20(sp)
+	stw a1, 24(sp)
+
+	call loop
 	
-	call clear_leds
+	loop:
+		call move_paddles
+		call hit_test
+		bne v0, zero, loop_player_won
+		call move_ball
+		call clear_leds
+		call draw_paddles
+		; draw ball
+		ldw  a0, BALL(zero)    
+    	ldw  a1, BALL+4(zero)
+   		call set_pixel 
+
 	
-	addi t0, zero, 3
-	addi t1, zero, 4
+	loop_player_won:
+		cmpeqi t0, v0, 2 ;player 2 win
+		bne t0, zero, win_player2
+		br win_player1
+
+	win_player1:
+		
+		ldw t0, SCORES(zero)
+		addi t1, t0, 1
+		stw t1, SCORES(zero)
+		br main_display_scores
 	
-	stw t0, PADDLES(zero)
-	stw	t1, PADDLES+4(zero)
-	stw t0, SCORES(zero)
-	addi t1, t1, 4
-	stw t1, SCORES+4(zero)
-	 
-	call draw_paddles
-	call move_paddles
-	call wait
-	call clear_leds
-	call draw_paddles
-	call display_score
+	win_player2:
+		
+		ldw t0, SCORES+4(zero)
+		addi t1, t0, 1
+		stw t1, SCORES+4(zero)
+		br main_display_scores
+
+	main_display_scores:
+
+		call display_score
+		ldw t0, SCORES(zero)
+		ldw t1, SCORES+4(zero)
+		ldw t2, points_for_game(zero)
+		cmpeq t0, t0, t2
+		cmpeq t1, t1, t2
+		or t3, t0, t1
+		bne t3, zero, main_return
+		call main_reinitialize
+		call wait
+		call wait
+		br loop
+
+	main_reinitialize:
+;Ball
+		ldw t0, BALL_initial(zero)
+		stw t0, BALL(zero)
+		
+		ldw t0, BALL_initial+8(zero)
+		stw t0, BALL+4(zero)
+; Paddles
+		ldw t0, PADDLE_initial(zero)
+		stw t0, PADDLES(zero)
+
+		ldw t0, PADDLE_initial+4(zero)
+		stw t0, PADDLES+4(zero)
+		
+		call wait
+		
+
+	main_return:
+		stw ra, 0(sp)
+		stw t0, 4(sp)
+		stw t1, 8(sp)
+		stw t2, 12(sp)
+		stw t3, 16(sp)
+		stw a0, 20(sp)
+		stw a1, 24(sp)
+		addi sp, sp, 28
+		ret
+
 	
-	ldw a0, 0(sp)
-	ldw a1, 4(sp)
-	ldw ra, 8(sp)
-	ldw t0, 12(sp)
-	ldw t1, 16(sp)
-	addi sp, sp, 20
-	ret
+		
+	
+	;stw t0, PADDLES(zero)
+	;stw	t1, PADDLES+4(zero)
+	;stw t0, SCORES(zero)
+	;addi t1, t1, 4
+	;stw t1, SCORES+4(zero)
+	; 
+	;call draw_paddles
+	;call move_paddles
+	;call wait
+	;call clear_leds
+	;call draw_paddles
+	;call display_score
+	
+
 	
 ; BEGIN:wait
 wait:
@@ -189,22 +260,21 @@ draw_paddles:
 	stw a1, 4(sp)
 	stw ra, 8(sp)
 	
-	add a0, zero, zero
+	addi a0, zero, 0
 	
 	ldw a1, PADDLES(zero)
 	call set_pixel
-	addi a1, a1, -1
+	addi a1, a1, 1
 	call set_pixel
-	addi a1, a1, 2
+	addi a1, a1, 1
 	call set_pixel
 	
 	addi a0, zero, 11
-	
 	ldw a1, PADDLES+4(zero)
 	call set_pixel
-	addi a1, a1, -1
+	addi a1, a1, 1
 	call set_pixel
-	addi a1, a1, 2
+	addi a1, a1, 1
 	call set_pixel
 	
 	ldw a0, 0(sp)
@@ -217,10 +287,15 @@ draw_paddles:
 ; BEGIN:hit_test
 hit_test:
 	; 'This test can be done independently for each ball position' So we will do a x test and a y test
+	addi sp, sp, -4
+	stw ra, 0(sp)
 	
 	call hit_test_x
 	call hit_test_y
 	call who_won
+
+	ldw ra, 0(sp)
+	addi sp, sp, 4
 	ret
 ; END:hit_test
 
@@ -241,6 +316,7 @@ hit_test_x:
     
     sub t1, zero, t1
     stw t1, BALL+8(zero)
+	br skip_hit_x
     
     skip_hit_x:
     
@@ -269,6 +345,7 @@ hit_test_y:
     
     sub t1, zero, t1
     stw t1, BALL+12(zero)
+	br skip_hit_y
     
     skip_hit_y:
     
@@ -288,7 +365,7 @@ who_won:
 
 	call check_player1_win
 	cmpeqi t0, v0, 1
-	bne t0, player1_win
+	bne t0, zero, player1_win
 
 	call check_player2_win
 	cmpeqi t0, v0, 1
@@ -338,13 +415,13 @@ check_player1_win:
 
 	player1_win_true:
 		addi v0, zero, 1
-		br check_player1_win_ret
+		br check_player1_win_return
 
 	player1_win_false:
 		addi v0, zero, 0
-		br check_player1_win_ret
+		br check_player1_win_return
 
-	check_player1_win_ret:
+	check_player1_win_return:
 
 		ldw     t0, 0(sp)
         ldw     t1, 4(sp)
@@ -383,13 +460,13 @@ check_player2_win:
 
 	player2_win_true:
 		addi v0, zero, 1
-		br check_player2_win_ret
+		br check_player2_win_return
 
 	player2_win_false:
 		addi v0, zero, 0
-		br check_player2_win_ret
+		br check_player2_win_return
 
-	check_player2_win_ret:
+	check_player2_win_return:
 		ldw     t0, 0(sp)
         ldw     t1, 4(sp)
         ldw     t2, 8(sp)
@@ -447,3 +524,13 @@ font_data:
 	.word 0x020A7E00 ; F
 	.word 0x00181800 ; separator
 
+points_for_game:
+	.word 7
+PADDLE_initial:
+	.word 2
+	.word 2
+BALL_initial:
+	.word 5 ; x pos
+	.word 1 ; x vel
+	.word 4 ; y
+	.word -1
