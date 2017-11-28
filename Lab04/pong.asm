@@ -121,30 +121,13 @@ main:
 
 	main_return:
 		call clear_leds
-		stw ra, 0(sp)
-		stw t0, 4(sp)
-		stw t1, 8(sp)
-		stw t2, 12(sp)	
+		ldw ra, 0(sp)
+		ldw t0, 4(sp)
+		ldw t1, 8(sp)
+		ldw t2, 12(sp)	
 	
 		addi sp, sp, 16
 		ret
-
-	
-		
-	
-	;stw t0, PADDLES(zero)
-	;stw	t1, PADDLES+4(zero)
-	;stw t0, SCORES(zero)
-	;addi t1, t1, 4
-	;stw t1, SCORES+4(zero)
-	; 
-	;call draw_paddles
-	;call move_paddles
-	;call wait
-	;call clear_leds
-	;call draw_paddles
-	;call display_score
-	
 
 	
 ; BEGIN:wait
@@ -479,7 +462,24 @@ check_player1_win:
 	and t7, t7, t4
 	bne t7, zero, player1_win_false
 
-	addi t2, t2, 1
+	addi t2, t2, -1
+	cmpeq t7, t1, t2
+	and t7, t4, t7
+	stw t6, BALL+8(zero)
+	addi t5, zero, 1
+	cmpeq t6, t6, t5
+	and t7, t7, t6
+	bne t7, zero, player1_inv
+
+	addi t2, t2, 4
+	cmpeq t7, t1, t2
+	and t7, t4, t7
+	stw t6, BALL+8(zero)
+	addi t5, zero, -1
+	cmpeq t6, t6, t5
+	and t7, t7, t6
+	bne t7, zero, player1_inv  
+	
                          
     cmplt   t5, t1, t2                         
     cmpge   t6, t1, t3                         
@@ -487,6 +487,12 @@ check_player1_win:
     and     t7, t4, t7                         
     bne     t7, zero, player1_win_true
     br      player1_win_false
+
+	player1_inv:
+		stw t0, BALL+12(zero)
+		sub t0, zero, t0
+		br player1_win_false
+	
 
 	player1_win_true:
 		addi v0, zero, 1
@@ -543,12 +549,35 @@ check_player2_win:
 
 	addi t2, t2, 1
 
+	addi t2, t2, -1
+	cmpeq t7, t1, t2
+	and t7, t4, t7
+	stw t6, BALL+8(zero)
+	addi t5, zero, 1
+	cmpeq t6, t6, t5
+	and t7, t7, t6
+	bne t7, zero, player2_inv
+
+	addi t2, t2, 4
+	cmpeq t7, t1, t2
+	and t7, t4, t7
+	stw t6, BALL+8(zero)
+	addi t5, zero, -1
+	cmpeq t6, t6, t5
+	and t7, t7, t6
+	bne t7, zero, player2_inv  
+
 	cmplt t5, t1, t2
 	cmpge t6, t1, t3
 	or t7, t5, t6
 	and t7, t4, t7
 	bne t7, zero, player2_win_true
 	br player2_win_false
+
+	player2_inv:
+		stw t0, BALL+12(zero)
+		sub t0, zero, t0
+		br player2_win_false
 
 	player2_win_true:
 		addi v0, zero, 1
