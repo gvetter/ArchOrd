@@ -57,7 +57,7 @@ main:
 		call move_ball
 		call clear_leds
 		call draw_paddles
-		call  draw_ball
+		call draw_ball
 	
    	 
 		call wait
@@ -199,7 +199,6 @@ set_pixel:
 	ldw t1, 4(sp)
 	ldw t2, 8(sp)
 	addi sp, sp, 12
-
 	ret
 ; END:set_pixel
 
@@ -277,6 +276,9 @@ move_paddles:
 	stw t0, PADDLES+4(zero)
 	
 	skip_paddle_2:
+	
+	stw zero, BUTTONS+4(zero)
+	
 	stw t0, 0(sp)
 	stw t1, 4(sp)
 	stw t2, 8(sp)
@@ -285,21 +287,22 @@ move_paddles:
 ; END:move_paddles
 
 draw_ball:
-addi sp, sp, -12
-stw a0, 0(sp)
-stw a1, 4(sp)
-stw ra, 8(sp)
+	addi sp, sp, -12
+	stw a0, 0(sp)
+	stw a1, 4(sp)
+	stw ra, 8(sp)
 
-ldw a0, BALL(zero)
-ldw a1, BALL+4(zero)
+	ldw a0, BALL(zero)
+	ldw a1, BALL+4(zero)
 
-call set_pixel
+	call set_pixel
 
-ldw a0, 0(sp)
-ldw a1, 4(sp)
-ldw ra, 8(sp)
-addi sp, sp, 12
-
+	ldw a0, 0(sp)
+	ldw a1, 4(sp)
+	ldw ra, 8(sp)
+	addi sp, sp, 12
+	ret
+	
 ; BEGIN:draw_paddles
 draw_paddles:
 	addi sp, sp, -12
@@ -313,7 +316,7 @@ draw_paddles:
 	call set_pixel
 	addi a1, a1, 1
 	call set_pixel
-	addi a1, a1, 1
+	addi a1, a1, -2
 	call set_pixel
 	
 	addi a0, zero, 11
@@ -321,7 +324,7 @@ draw_paddles:
 	call set_pixel
 	addi a1, a1, 1
 	call set_pixel
-	addi a1, a1, 1
+	addi a1, a1, -2
 	call set_pixel
 	
 	ldw a0, 0(sp)
