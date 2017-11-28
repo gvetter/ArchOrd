@@ -460,8 +460,7 @@ check_player2_win:
 
 	addi t2, t2, -2 
 
-	bne t7, zero, player2_win_true
-	br player2_win_false
+	br player2_win_true
 
 	player2_inv:
 		ldw t0, BALL+12(zero)
