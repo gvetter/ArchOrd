@@ -5,12 +5,10 @@
 .equ BUTTONS, 0x2030 ; Button addresses
 
 addi sp, zero, LEDS
-; initialisation
 addi sp, sp, -8
 stw t0, 0(sp)
 stw ra, 4(sp)
 
-;Ball
 ldw t0, BALL_initial(zero) ;x pos
 stw t0, BALL(zero)
 		
@@ -23,14 +21,12 @@ stw t0, BALL+8(zero)
 ldw t0, BALL_initial+12(zero) ; y velo
 stw t0, BALL+12(zero)
 
-; Paddles
 ldw t0, PADDLE_initial(zero)
 stw t0, PADDLES(zero)
 
 ldw t0, PADDLE_initial+4(zero)
 stw t0, PADDLES+4(zero)
 
-; score
 stw  zero, SCORES(zero)
 stw  zero, SCORES+4(zero)
 
@@ -44,11 +40,6 @@ main:
 	stw t0, 4(sp)
 	stw t1, 8(sp)
 	stw t2, 12(sp)	
-	
-
-	;call main_reinitialize
-
-	;call loop
 	
 	loop:
 		call move_paddles
@@ -91,7 +82,7 @@ main:
 		call wait
 		ldw t0, SCORES(zero)
 		ldw t1, SCORES+4(zero)
-		ldw t2, points_for_game(zero)
+		addi t2, zero, 7
 		cmpeq t0, t0, t2
 		cmpeq t1, t1, t2
 		or t2, t0, t1
@@ -101,13 +92,11 @@ main:
 		br loop
 
 	main_reinitialize:
-;Ball
 		ldw t0, BALL_initial(zero)
 		stw t0, BALL(zero)
 		
 		ldw t0, BALL_initial+8(zero)
 		stw t0, BALL+4(zero)
-; Paddles
 		ldw t0, PADDLE_initial(zero)
 		stw t0, PADDLES(zero)
 
@@ -147,8 +136,7 @@ wait:
 		ldw t0, 0(sp)
 		addi sp, sp, 4
 		ret
-
-;END:wait
+; END:wait
 
 
 ; BEGIN:clear_leds
@@ -241,8 +229,6 @@ move_paddles:
 	addi t0, t0, 1
 	stw t0, PADDLES(zero)
 	
-	;OTHER PLAYER
-	
 	skip_paddle_1:
 	andi t1, t3, 8 ;P2 = up
 	andi t2, t3, 4 ;P2 = down
@@ -277,6 +263,7 @@ move_paddles:
 	ret
 ; END:move_paddles
 
+; BEGIN:draw_ball
 draw_ball:
 	addi sp, sp, -12
 	stw a0, 0(sp)
@@ -293,7 +280,8 @@ draw_ball:
 	ldw ra, 8(sp)
 	addi sp, sp, 12
 	ret
-	
+; END:draw_ball
+
 ; BEGIN:draw_paddles
 draw_paddles:
 	addi sp, sp, -12
@@ -327,82 +315,12 @@ draw_paddles:
 
 ; BEGIN:hit_test
 hit_test:
-	; 'This test can be done independently for each ball position' So we will do a x test and a y test
-	addi sp, sp, -4
-	stw ra, 0(sp)
-	
-	call hit_test_x
-	call hit_test_y
-	call who_won
-
-	ldw ra, 0(sp)
-	addi sp, sp, 4
-	ret
-; END:hit_test
-
-; BEGIN:hit_test_x
-hit_test_x:
-    addi sp, sp, -16
-    stw t0, 0(sp)
-    stw t1, 4(sp)
-    stw t2, 8(sp)
-    stw t3, 12(sp)
-    
-    ldw t0, BALL(zero) ;t0 = pos
-    ldw t1, BALL+8(zero);t1 = vel
-    cmpeqi t2, t0, 1
-    cmpeqi t3, t0, 10
-    or t2, t2, t3
-    beq t2, zero, skip_hit_x
-    
-    sub t1, zero, t1
-    stw t1, BALL+8(zero)
-	br skip_hit_x
-    
-    skip_hit_x:
-    
-	ldw t0, 0(sp)
-    ldw t1, 4(sp)
-    ldw t2, 8(sp)
-    ldw t3, 12(sp)
-	addi sp, sp, 16
-	ret
-; END:hit_test_x
-
-; BEGIN:hit_test_y
-hit_test_y:
-    addi sp, sp, -16
-    stw t0, 0(sp)
-    stw t1, 4(sp)
-    stw t2, 8(sp)
-    stw t3, 12(sp)
-    
-    ldw t0, BALL+4(zero) ;t0 = pos
-    ldw t1, BALL+12(zero);t1 = vel
-    cmpeqi t2, t0, 0
-    cmpeqi t3, t0, 7
-    or t2, t2, t3
-    beq t2, zero, skip_hit_y
-    
-    sub t1, zero, t1
-    stw t1, BALL+12(zero)
-	br skip_hit_y
-    
-    skip_hit_y:
-    
-	ldw t0, 0(sp)
-    ldw t1, 4(sp)
-    ldw t2, 8(sp)
-    ldw t3, 12(sp)
-	addi sp, sp, 16
-	
-	ret
-; END:hit_test_y
-
-who_won:
 	addi sp, sp, -8
-	stw t0, 0(sp)
-	stw ra, 4(sp)
+	stw ra, 0(sp)
+	stw t0, 4(sp)
+	
+	call x_test
+	call y_test
 
 	call check_player1_win
 	cmpeqi t0, v0, 1
@@ -417,30 +335,21 @@ who_won:
 	br check_player_ret
 
 	player1_win:
-		addi v0, zero, 1
-		br check_player_ret
+	addi v0, zero, 1
+	br check_player_ret
 
 	player2_win:
-		addi v0, zero, 2
-		br check_player_ret
+	addi v0, zero, 2
+	br check_player_ret
 
 	check_player_ret:
-		ldw t0, 0(sp)
-		ldw ra, 4(sp)
-		addi sp, sp, 8
-		ret
+	ldw ra, 0(sp)
+	ldw t0, 4(sp)
+	addi sp, sp, 8
+	ret
 
+; BEGIN:check_player1_win
 check_player1_win:
-
-	addi    sp, sp, -32
-    stw     t0, 0(sp)
-    stw     t1, 4(sp)
-    stw     t2, 8(sp)
-    stw     t3, 12(sp)
-    stw     t4, 16(sp)
-    stw     t5, 20(sp)
-    stw     t6, 24(sp)
-    stw     t7, 28(sp)
 
 	ldw t0, BALL(zero)
 	ldw t1, BALL+4(zero)
@@ -489,49 +398,31 @@ check_player1_win:
     br      player1_win_false
 
 	player1_inv:
-		ldw t0, BALL+12(zero)
-		ldw t1, BALL+4(zero)
-		add t2, zero, zero
-		beq t1, t2, player1_win_false
-		addi t2, zero, 7 
-		beq t1, t2, player1_win_false
-		sub t0, zero, t0
-		stw t0, BALL+12(zero)
-		br player1_win_false
+	ldw t0, BALL+12(zero)
+	ldw t1, BALL+4(zero)
+	add t2, zero, zero
+	beq t1, t2, player1_win_false
+	addi t2, zero, 7 
+	beq t1, t2, player1_win_false
+	sub t0, zero, t0
+	stw t0, BALL+12(zero)
+	br player1_win_false
 	
 
 	player1_win_true:
-		addi v0, zero, 1
-		br check_player1_win_return
+	addi v0, zero, 1
+	br check_player1_win_return
 
 	player1_win_false:
-		addi v0, zero, 0
-		br check_player1_win_return
+	addi v0, zero, 0
+	br check_player1_win_return
 
 	check_player1_win_return:
+	ret
+; END:check_player1_win
 
-		ldw     t0, 0(sp)
-        ldw     t1, 4(sp)
-        ldw     t2, 8(sp)
-        ldw     t3, 12(sp)
-        ldw     t4, 16(sp)
-        ldw     t5, 20(sp)
-        ldw     t6, 24(sp)
-        ldw     t7, 28(sp)
-        addi    sp, sp, 32
-		ret
-	
+; BEGIN:check_player2_win
 check_player2_win:
-
-	addi    sp, sp, -32
-    stw     t0, 0(sp)
-    stw     t1, 4(sp)
-    stw     t2, 8(sp)
-    stw     t3, 12(sp)
-    stw     t4, 16(sp)
-    stw     t5, 20(sp)
-    stw     t6, 24(sp)
-    stw     t7, 28(sp)
 	
 	ldw t0, BALL(zero)
 	ldw t1, BALL+4(zero)
@@ -598,16 +489,66 @@ check_player2_win:
 		br check_player2_win_return
 
 	check_player2_win_return:
-		ldw     t0, 0(sp)
-        ldw     t1, 4(sp)
-        ldw     t2, 8(sp)
-        ldw     t3, 12(sp)
-        ldw     t4, 16(sp)
-        ldw     t5, 20(sp)
-        ldw     t6, 24(sp)
-        ldw     t7, 28(sp)
-        addi    sp, sp, 32
         ret
+; END:check_player2_win
+
+; BEGIN:x_test
+x_test:
+    addi sp, sp, -16
+    stw t0, 0(sp)
+    stw t1, 4(sp)
+    stw t2, 8(sp)
+    stw t3, 12(sp)
+    
+    ldw t0, BALL(zero) ;t0 = pos
+    ldw t1, BALL+8(zero);t1 = vel
+    cmpeqi t2, t0, 1
+    cmpeqi t3, t0, 10
+    or t2, t2, t3
+    beq t2, zero, skip_hit_x
+    
+    sub t1, zero, t1
+    stw t1, BALL+8(zero)
+	br skip_hit_x
+    
+    skip_hit_x:
+	ldw t0, 0(sp)
+    ldw t1, 4(sp)
+    ldw t2, 8(sp)
+    ldw t3, 12(sp)
+	addi sp, sp, 16
+	ret
+; END:x_test
+
+; BEGIN:y_test
+y_test:
+    addi sp, sp, -16
+    stw t0, 0(sp)
+    stw t1, 4(sp)
+    stw t2, 8(sp)
+    stw t3, 12(sp)
+    
+    ldw t0, BALL+4(zero) ;t0 = pos
+    ldw t1, BALL+12(zero);t1 = vel
+    cmpeqi t2, t0, 0
+    cmpeqi t3, t0, 7
+    or t2, t2, t3
+    beq t2, zero, skip_hit_y
+    
+    sub t1, zero, t1
+    stw t1, BALL+12(zero)
+	br skip_hit_y
+    
+    skip_hit_y:
+	ldw t0, 0(sp)
+    ldw t1, 4(sp)
+    ldw t2, 8(sp)
+    ldw t3, 12(sp)
+	addi sp, sp, 16
+	ret
+; END:y_test
+
+; END:hit_test
 
 ; BEGIN:display_score
 display_score:
@@ -655,8 +596,6 @@ font_data:
 	.word 0x020A7E00 ; F
 	.word 0x00181800 ; separator
 
-points_for_game:
-	.word 7
 PADDLE_initial:
 	.word 1
 	.word 1
