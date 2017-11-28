@@ -396,7 +396,7 @@ hit_test_y:
     
     ldw t0, BALL+4(zero) ;t0 = pos
     ldw t1, BALL+12(zero);t1 = vel
-    cmpeqi t2, t0, 1
+    cmpeqi t2, t0, 0
     cmpeqi t3, t0, 7
     or t2, t2, t3
     beq t2, zero, skip_hit_y
