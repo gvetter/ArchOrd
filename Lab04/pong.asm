@@ -406,7 +406,7 @@ check_player1_win:
 	beq t1, t2, player1_win_false
 	sub t0, zero, t0
 	stw t0, BALL+12(zero)
-	br player1_win_false
+	br player1_win_true
 	
 
 	player1_win_true:
@@ -478,7 +478,7 @@ check_player2_win:
 		beq t1, t2, player2_win_false
 		sub t0, zero, t0
 		stw t0, BALL+12(zero)
-		br player2_win_false
+		br player2_win_true
 
 	player2_win_true:
 		addi v0, zero, 1
