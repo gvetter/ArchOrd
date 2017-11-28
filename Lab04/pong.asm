@@ -390,8 +390,10 @@ check_player1_win:
 	bne t7, zero, player1_inv  
 	
 	addi t2, t2, -2
-                         
-    br      player1_win_true
+    cmpeq t7, t1, t2
+	and t7, t4, t7
+	bne t7, zero, player1_win_true      
+    br      player1_win_false
 
 	player1_inv:
 	ldw t0, BALL+12(zero)
@@ -459,8 +461,10 @@ check_player2_win:
 	bne t7, zero, player2_inv 
 
 	addi t2, t2, -2 
-
-	br player2_win_true
+	cmpeq t7, t1, t2
+	and t7, t4, t7
+	bne t7, zero, player2_win_true
+	br player2_win_false
 
 	player2_inv:
 		ldw t0, BALL+12(zero)
