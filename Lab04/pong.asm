@@ -120,6 +120,7 @@ main:
 		
 
 	main_return:
+		call clear_leds
 		stw ra, 0(sp)
 		stw t0, 4(sp)
 		stw t1, 8(sp)
@@ -395,7 +396,7 @@ hit_test_y:
     
     ldw t0, BALL+4(zero) ;t0 = pos
     ldw t1, BALL+12(zero);t1 = vel
-    cmpeqi t2, t0, 0
+    cmpeqi t2, t0, 1
     cmpeqi t3, t0, 7
     or t2, t2, t3
     beq t2, zero, skip_hit_y
@@ -462,11 +463,28 @@ check_player1_win:
 	ldw t1, BALL+4(zero)
 	ldw t2, PADDLES+4(zero)
 	addi t3, t2, 3
-	cmpeqi  t4, t0, 10                         
+	cmpeqi  t4, t0, 10
+	
+	cmpeq t7, t1, t2
+	and t7, t7, t4
+	bne t7, zero, player1_win_false
+	
+	addi t2, t2, 1
+	cmpeq t7, t1, t2
+	and t7, t7, t4
+	bne t7, zero, player1_win_false
+	
+	addi t2, t2, -2
+	cmpeq t7, t1, t2
+	and t7, t7, t4
+	bne t7, zero, player1_win_false
+
+	addi t2, t2, 1
+                         
     cmplt   t5, t1, t2                         
     cmpge   t6, t1, t3                         
     or      t7, t5, t6                         
-    and     t7, t4, t7                     ;mettre une valeur t8?    
+    and     t7, t4, t7                         
     bne     t7, zero, player1_win_true
     br      player1_win_false
 
@@ -505,9 +523,26 @@ check_player2_win:
 	
 	ldw t0, BALL(zero)
 	ldw t1, BALL+4(zero)
-	ldw t2, PADDLES(zero)
+	ldw t2, PADDLES(zero)	
 	addi t3, t2, 3
 	cmpeqi t4, t0, 1
+	
+	cmpeq t7, t1, t2
+	and t7, t7, t4
+	bne t7, zero, player2_win_false
+	
+	addi t2, t2, 1
+	cmpeq t7, t1, t2
+	and t7, t7, t4
+	bne t7, zero, player2_win_false
+	
+	addi t2, t2, -2
+	cmpeq t7, t1, t2
+	and t7, t7, t4
+	bne t7, zero, player2_win_false
+
+	addi t2, t2, 1
+
 	cmplt t5, t1, t2
 	cmpge t6, t1, t3
 	or t7, t5, t6
