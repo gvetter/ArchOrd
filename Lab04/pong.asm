@@ -375,7 +375,7 @@ check_player1_win:
 	cmpeq t7, t1, t2
 	and t7, t4, t7
 	ldw t6, BALL+12(zero)
-	addi t5, zero, 1
+	addi t5, zero, -1
 	cmpeq t6, t6, t5
 	and t7, t7, t6
 	bne t7, zero, player1_inv
@@ -384,7 +384,7 @@ check_player1_win:
 	cmpeq t7, t1, t2
 	and t7, t4, t7
 	ldw t6, BALL+12(zero)
-	addi t5, zero, -1
+	addi t5, zero, 1
 	cmpeq t6, t6, t5
 	and t7, t7, t6
 	bne t7, zero, player1_inv  
@@ -449,7 +449,7 @@ check_player2_win:
 	cmpeq t7, t1, t2
 	and t7, t4, t7
 	ldw t6, BALL+12(zero)
-	addi t5, zero, 1
+	addi t5, zero, -1
 	cmpeq t6, t6, t5
 	and t7, t7, t6
 	bne t7, zero, player2_inv
@@ -458,7 +458,7 @@ check_player2_win:
 	cmpeq t7, t1, t2
 	and t7, t4, t7
 	ldw t6, BALL+12(zero)
-	addi t5, zero, -1
+	addi t5, zero, 1
 	cmpeq t6, t6, t5
 	and t7, t7, t6
 	bne t7, zero, player2_inv 
