@@ -552,7 +552,7 @@ check_player2_win:
 	addi t2, t2, -1
 	cmpeq t7, t1, t2
 	and t7, t4, t7
-	stw t6, BALL+8(zero)
+	stw t6, BALL+12(zero)
 	addi t5, zero, 1
 	cmpeq t6, t6, t5
 	and t7, t7, t6
@@ -561,7 +561,7 @@ check_player2_win:
 	addi t2, t2, 4
 	cmpeq t7, t1, t2
 	and t7, t4, t7
-	stw t6, BALL+8(zero)
+	stw t6, BALL+12(zero)
 	addi t5, zero, -1
 	cmpeq t6, t6, t5
 	and t7, t7, t6
