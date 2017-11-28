@@ -61,7 +61,6 @@ main:
 	
    	 
 		call wait
-		call wait
 		br loop
 
 	
@@ -98,8 +97,6 @@ main:
 		or t2, t0, t1
 		bne t2, zero, main_return
 		call main_reinitialize
-		call wait
-		call wait
 		call wait
 		br loop
 
@@ -155,7 +152,7 @@ wait:
 	stw t0, 0(sp)
 	
 	addi t0, zero, 1
-	slli t0, t0, 20
+	slli t0, t0, 21
 
     loop_wait:
         beq  t0, zero, wait_return
@@ -587,8 +584,8 @@ font_data:
 points_for_game:
 	.word 7
 PADDLE_initial:
-	.word 2
-	.word 2
+	.word 1
+	.word 1
 BALL_initial:
 	.word 5 ; x pos
 	.word 1 ; x vel
