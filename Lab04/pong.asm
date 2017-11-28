@@ -490,6 +490,11 @@ check_player1_win:
 
 	player1_inv:
 		ldw t0, BALL+12(zero)
+		ldw t1, BALL+4(zero)
+		add t2, zero, zero
+		beq t1, t2, player1_win_false
+		addi t2, zero, 7 
+		beq t1, t2, player1_win_false
 		sub t0, zero, t0
 		stw t0, BALL+12(zero)
 		br player1_win_false
@@ -575,6 +580,11 @@ check_player2_win:
 
 	player2_inv:
 		ldw t0, BALL+12(zero)
+		ldw t1, BALL+4(zero)
+		add t2, zero, zero
+		beq t1, t2, player2_win_false
+		addi t2, zero, 7 
+		beq t1, t2, player2_win_false
 		sub t0, zero, t0
 		stw t0, BALL+12(zero)
 		br player2_win_false
