@@ -389,6 +389,7 @@ check_player1_win:
 	and t7, t7, t6
 	bne t7, zero, player1_inv  
 	
+	addi t2, t2, -2
                          
     cmplt   t5, t1, t2                         
     cmpge   t6, t1, t3                         
@@ -406,7 +407,7 @@ check_player1_win:
 	beq t1, t2, player1_win_false
 	sub t0, zero, t0
 	stw t0, BALL+12(zero)
-	br player1_win_true
+	br player1_win_false
 	
 
 	player1_win_true:
@@ -460,7 +461,9 @@ check_player2_win:
 	addi t5, zero, -1
 	cmpeq t6, t6, t5
 	and t7, t7, t6
-	bne t7, zero, player2_inv  
+	bne t7, zero, player2_inv 
+
+	addi t2, t2, -2 
 
 	cmplt t5, t1, t2
 	cmpge t6, t1, t3
@@ -478,7 +481,7 @@ check_player2_win:
 		beq t1, t2, player2_win_false
 		sub t0, zero, t0
 		stw t0, BALL+12(zero)
-		br player2_win_true
+		br player2_win_false
 
 	player2_win_true:
 		addi v0, zero, 1
