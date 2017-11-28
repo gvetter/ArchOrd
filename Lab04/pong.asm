@@ -39,17 +39,16 @@ call main
 break
 
 main:
-	addi sp, sp, -24
+	addi sp, sp, -16
 	stw ra, 0(sp)
 	stw t0, 4(sp)
 	stw t1, 8(sp)
 	stw t2, 12(sp)	
-	stw a0, 16(sp)
-	stw a1, 20(sp)
+	
 
 	;call main_reinitialize
 
-	call loop
+	;call loop
 	
 	loop:
 		call move_paddles
@@ -58,12 +57,11 @@ main:
 		call move_ball
 		call clear_leds
 		call draw_paddles
-		; draw ball
-		ldw  a0, BALL(zero)    
-    	ldw  a1, BALL+4(zero)
-   		call set_pixel 
-		;call wait
-		
+		call  draw_ball
+	
+   	 
+		call wait
+		call wait
 		br loop
 
 	
@@ -97,7 +95,8 @@ main:
 		or t2, t0, t1
 		bne t2, zero, main_return
 		call main_reinitialize
-		;call wait
+		call wait
+		call wait
 		call wait
 		br loop
 
@@ -114,9 +113,10 @@ main:
 
 		ldw t0, PADDLE_initial+4(zero)
 		stw t0, PADDLES+4(zero)
-
 		
-		;call wait
+		br loop
+		
+		call wait
 		
 
 	main_return:
@@ -124,9 +124,8 @@ main:
 		stw t0, 4(sp)
 		stw t1, 8(sp)
 		stw t2, 12(sp)	
-		stw a0, 16(sp)
-		stw a1, 20(sp)
-		addi sp, sp, 24
+	
+		addi sp, sp, 16
 		ret
 
 	
@@ -153,7 +152,7 @@ wait:
 	stw t0, 0(sp)
 	
 	addi t0, zero, 1
-	slli t0, t0, 5
+	slli t0, t0, 20
 
     loop_wait:
         beq  t0, zero, wait_return
@@ -284,6 +283,22 @@ move_paddles:
 	addi sp, sp, 12	
 	ret
 ; END:move_paddles
+
+draw_ball:
+addi sp, sp, -12
+stw a0, 0(sp)
+stw a1, 4(sp)
+stw ra, 8(sp)
+
+ldw a0, BALL(zero)
+ldw a1, BALL+4(zero)
+
+call set_pixel
+
+ldw a0, 0(sp)
+ldw a1, 4(sp)
+ldw ra, 8(sp)
+addi sp, sp, 12
 
 ; BEGIN:draw_paddles
 draw_paddles:
