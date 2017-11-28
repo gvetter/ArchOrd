@@ -230,19 +230,20 @@ move_ball:
 
 ; BEGIN:move_paddles
 move_paddles:
-	addi sp, sp, -12
+	addi sp, sp, -16
 	stw t0, 0(sp)
 	stw t1, 4(sp)
 	stw t2, 8(sp)
+	stw t3, 12(sp)
 	
-	ldw t0, BUTTONS+4(zero)
-	andi t1, t0, 1 ;P1 = up
-	andi t2, t0, 2 ;P1 = down
-	srli t0, t0, 4
-	slli t0, t0, 4
+	ldw t3, BUTTONS+4(zero)
+	andi t1, t3, 1 ;P1 = up
+	andi t2, t3, 2 ;P1 = down
+	andi t0, t3, 0xFFFC
 	stw t0, BUTTONS+4(zero)
 	bne t1, zero, up_1
 	bne t2, zero, down_1
+	br skip_paddle_1
 	
 	up_1:
 	ldw t0, PADDLES(zero)
@@ -262,15 +263,14 @@ move_paddles:
 	;OTHER PLAYER
 	
 	skip_paddle_1:
-	ldw t0, BUTTONS+4(zero)
-	andi t1, t0, 8 ;P2 = up
-	andi t2, t0, 4 ;P2 = down
-	srli t0, t0, 4
-	slli t0, t0, 4
+	andi t1, t3, 8 ;P2 = up
+	andi t2, t3, 4 ;P2 = down
+	andi t0, t3, 0xFFF3
 	stw t0, BUTTONS+4(zero)
 	bne t1, zero, up_2
 	bne t2, zero, down_2
-	
+	br skip_paddle_2
+
 	up_2:
 	ldw t0, PADDLES+4(zero)
 	cmpeqi t1, t0, 1
@@ -291,7 +291,8 @@ move_paddles:
 	ldw t0, 0(sp)
 	ldw t1, 4(sp)
 	ldw t2, 8(sp)
-	addi sp, sp, 12	
+	ldw t3, 12(sp)
+	addi sp, sp, 16
 	ret
 ; END:move_paddles
 
