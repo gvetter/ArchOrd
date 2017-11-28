@@ -351,10 +351,10 @@ hit_test:
 ; BEGIN:check_player1_win
 check_player1_win:
 
-	ldw t0, BALL(zero)
-	ldw t1, BALL+4(zero)
-	ldw t2, PADDLES+4(zero)
-	cmpeqi  t4, t0, 10
+	ldw t0, BALL(zero)  ;  0 = POSITION X
+	ldw t1, BALL+4(zero);  1 = POSITION Y
+	ldw t2, PADDLES+4(zero) ; 2 = POSITION Y PADDLE
+	cmpeqi  t4, t0, 10		; 4 = BONNE COLONNE OU PAS
 	
 	cmpeq t7, t1, t2
 	and t7, t7, t4
@@ -422,7 +422,6 @@ check_player2_win:
 	ldw t0, BALL(zero)
 	ldw t1, BALL+4(zero)
 	ldw t2, PADDLES(zero)	
-	addi t3, t2, 3
 	cmpeqi t4, t0, 1
 	
 	cmpeq t7, t1, t2
@@ -443,7 +442,7 @@ check_player2_win:
 	cmpeq t7, t1, t2
 	and t7, t4, t7
 	ldw t6, BALL+12(zero)
-	addi t5, zero, -1
+	addi t5, zero, 1
 	cmpeq t6, t6, t5
 	and t7, t7, t6
 	bne t7, zero, player2_inv
@@ -452,7 +451,7 @@ check_player2_win:
 	cmpeq t7, t1, t2
 	and t7, t4, t7
 	ldw t6, BALL+12(zero)
-	addi t5, zero, 1
+	addi t5, zero, -1
 	cmpeq t6, t6, t5
 	and t7, t7, t6
 	bne t7, zero, player2_inv 
