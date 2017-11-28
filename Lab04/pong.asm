@@ -87,6 +87,9 @@ main:
 	main_display_scores:
 
 		call display_score
+		call wait
+		call wait
+		call wait
 		ldw t0, SCORES(zero)
 		ldw t1, SCORES+4(zero)
 		ldw t2, points_for_game(zero)
@@ -235,6 +238,9 @@ move_paddles:
 	ldw t0, BUTTONS+4(zero)
 	andi t1, t0, 1 ;P1 = up
 	andi t2, t0, 2 ;P1 = down
+	srli t0, t0, 4
+	slli t0, t0, 4
+	stw t0, BUTTONS+4(zero)
 	bne t1, zero, up_1
 	bne t2, zero, down_1
 	
@@ -259,6 +265,11 @@ move_paddles:
 	ldw t0, BUTTONS+4(zero)
 	andi t1, t0, 8 ;P2 = up
 	andi t2, t0, 4 ;P2 = down
+	srli t0, t0, 4
+	slli t0, t0, 4
+	stw t0, BUTTONS+4(zero)
+	bne t1, zero, up_2
+	bne t2, zero, down_2
 	
 	up_2:
 	ldw t0, PADDLES+4(zero)
@@ -277,11 +288,9 @@ move_paddles:
 	
 	skip_paddle_2:
 	
-	stw zero, BUTTONS+4(zero)
-	
-	stw t0, 0(sp)
-	stw t1, 4(sp)
-	stw t2, 8(sp)
+	ldw t0, 0(sp)
+	ldw t1, 4(sp)
+	ldw t2, 8(sp)
 	addi sp, sp, 12	
 	ret
 ; END:move_paddles
